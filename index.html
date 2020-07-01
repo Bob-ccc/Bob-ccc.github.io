@@ -1,22 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+
     <style>
-        h1{
+        h1 {
             text-align: center;
+        }
+
+        .bootstrap {
+            text-align: center;
+        }
+
+        .bootstrap .bsbox a img{
+            max-width: 100%;
+        }
+        .bootstrap .bsbox p{
+            display: inline-block;
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+            z-index: 99;
+            font-size: 24px;
+            font-weight: bolder;
         }
     </style>
 </head>
+
 <body>
     <h1>欢迎来到我的网站</h1>
-    <h2>bootstrap</h2>
-    <a href="./Redash/index.html">Redash</a>
-    <a href="./微信打飞机/index.html">微信打飞机</a>
-    <a href="./星巴克/index.html">星巴克</a>
-    <a href="./RANE°/index.html">RANE°</a>
+    <div class="bootstrap">
 
+        <div class="container">
+            <h2>bootstrap</h2>
+            <div class="row">
+                <div class="bsbox col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <a href="./Redash/index.html">
+                        <img src="./img/redash.png" alt="Redash">
+                    </a>
+                    <p>Redash</p>
+                </div>
+                <div class="bsbox col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <a href="./微信打飞机/index.html">
+                        <img src="./img/weixindafeiji.png" alt="微信打飞机">
+                    </a>
+                    <p>微信打飞机</p>
+                </div>
+                <div class="bsbox col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <a href="./星巴克/index.html">
+                        <img src="./img/starbucks.png" alt="星巴克">
+                    </a>
+                    <p>星巴克</p>
+                </div>
+                <div class="bsbox col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <a href="./RANE°/index.html">
+                        <img src="./img/rane.png" alt="RANE°">
+                    </a>
+                    <p>RANE°</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
 </body>
+
 </html>
