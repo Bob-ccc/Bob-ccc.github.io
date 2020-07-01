@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星巴克 | 用每一杯咖啡传递星巴克独特的咖啡体验</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.staticfile.org/minireset.css/0.0.2/minireset.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <!-- 导航部分 -->
+    <div class="b-nav">
+        <!-- 头部 -->
+        <div class=" header">
+            <!-- logo -->
+            <a class="logo" href="/">
+                <img src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/images/logo.svg" alt="星巴克">
+            </a>
+
+            <div class="primary">
+                <ul>
+                    <li class="stores">
+                        <a id="stores-primary" href="#">
+                            门店
+                        </a>
+                    </li>
+                    <li class="account">
+                        <a id="account-primary" href="#"><span data-reactroot="" class="">我的帐户</span></a>
+                    </li>
+                    <li class="menu">
+                        <a id="menu-primary" href="#">
+                            菜单
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 展开 -->
+            <a class="icon trigger " id="nav-menu">
+                <img src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/icons/icon-hamburger.svg">
+            </a>
+            <a class="icon closeBtn" id="nav-list">
+                <img src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/icons/icon-close.svg">
+            </a>
+        </div>
+        <!-- 内容 -->
+        <div class="body">
+            <div class="middle hidden">
+                <ul>
+                    <li>
+                        <a href="#">门店</a>
+                    </li>
+                    <li>
+                        <a href="#"><span>星享俱乐部</span></a>
+                    </li>
+                    <li>
+                        <a href="#">菜单</a>
+                    </li>
+                    <li>
+                        <hr>
+                    </li>
+                    <li>
+                        <a href="#">星巴克移动应用</a>
+                    </li>
+                    <li>
+                        <a href="#">星礼卡</a>
+                    </li>
+                    <li>
+                        <a href="#">星巴克臻选™</a>
+                    </li>
+                    <li>
+                        <a href="#">啡快™ － 在线点 到店取</a>
+                    </li>
+                    <li>
+                        <a href="#">专星送™</a>
+                    </li>
+                    <li>
+                        <a href="#">咖啡星讲堂</a>
+                    </li>
+                    <li>
+                        <a href="#">上海烘焙工坊</a>
+                    </li>
+                    <li>
+                        <a href="#">关于星巴克</a>
+                    </li>
+                    <li>
+                        <a href="#">帮助中心</a>
+                    </li>
+                    <li>
+                        <hr>
+                    </li>
+                </ul>
+            </div>
+            <div id="account-entry">
+                <span>
+                    <div class="display-1">
+                        <span>心情惬意，来杯咖啡吧&nbsp;☕</span>
+                    </div>
+                    <!-- 登录注册 -->
+                    <div class="account">
+                        <a class="sign-in" href="#">
+                            <img src="https://www.starbucks.com.cn/assets/icons/icon-account.svg">
+                            <span><span>登录</span></span>
+                        </a>
+                        <a class="button small register" href="#">
+                            <span>
+                                <span>注册</span>
+                            </span>
+                        </a>
+                    </div>
+                </span>
+            </div>
+
+        </div>
+        <script>
+            $(".b-nav .trigger").click(function () {
+                $(this).fadeOut(200, function () {
+                    $(this).siblings(".closeBtn").fadeIn(200)
+                })
+                $(this).siblings(".primary").fadeOut(200).parents(".b-nav").find(".body").addClass("active").find(".display-1").addClass("hidden").end().find("#account-entry").addClass("active").end().find(".middle").removeClass("hidden")
+
+            })
+            $(".b-nav .closeBtn").click(function () {
+                $(this).fadeOut(200, function () {
+                    $(this).siblings(".trigger").fadeIn(200)
+                })
+                $(this).siblings(".primary").fadeIn(200).parents(".b-nav").find(".body").removeClass("active").find(".display-1").removeClass("hidden").end().find("#account-entry").removeClass("active").end().find(".middle").addClass("hidden")
+            })
+        </script>
+
+    </div>
+    <div class="content">
+        <!-- 轮播图 -->
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img
+                        src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/images/featured/2020summer/banner-icy-dumpling-page-20200603.jpg">
+                    <img
+                        src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/images/featured/club_upgrade/banner_mobile.jpg">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="item">
+                    <img
+                        src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/images/featured/club_upgrade/KV-BEV-2020-06-17.jpg">
+                    <img
+                        src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/images/featured/2020summer/banner-icy-dumpling-mobile-20200603.jpg">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img
+                        src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/images/featured/club_upgrade/banner.jpg">
+                    <img
+                        src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/images/featured/club_upgrade/KV-BEV-mobile.jpg">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <!-- 轮播图下方三图片 -->
+        <div class="promotion ">
+            <div class="container-fluid">
+                <a id="home-left-campaign" class="col-sm-4" href="#">
+                    <img src="https://www-static.chinacdn.starbucks.com.cn/prod/images/pages/tmall-2020-05-25-zh.jpg">
+                </a>
+                <a id="home-middle-campaign" class="col-sm-4" href="#">
+                    <img
+                        src="https://www-static.chinacdn.starbucks.com.cn/prod/images/pages/starbucks-design-studio-web-china.jpg">
+                </a>
+                <a id="home-right-campaign" class="col-sm-4" href="#">
+                    <img src="https://www-static.chinacdn.starbucks.com.cn/prod/images/pages/homepage-career-cn.jpg">
+                </a>
+            </div>
+        </div>
+        <!-- 星享俱乐部部分 -->
+        <div class="program">
+            <div class="container-fluid">
+                <div class="col-sm-6 word">
+                    <h2 class="wrapper-mobile">星享俱乐部</h2>
+                    <p class="light wrapper-mobile">开启您的星享之旅，星星越多、会员等级越高、好礼越丰富。<a id="home-msr-learn-more" class="link"
+                            href="#"">了解更多 ›</a>
+                    </p>
+                    <p class=" flex">
+                            <a id="home-msr-signup" href="#" class="button">注册</a>
+                            <a id="home-msr-login" href="#" class="button">登录</a>
+                    </p>
+                </div>
+                <div class="col-sm-6 image">
+                    <img src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/images/logo-msr-new.svg">
+                </div>
+            </div>
+        </div>
+
+        <!-- 星巴克精选 -->
+        <div class="tmall">
+            <div class="container-fluid">
+                <h2 class="wrapper-mobile">星巴克精选</h2>
+                <p class="light wrapper-mobile">在星巴克天猫旗舰店发现更多咖啡心意</p>
+                <ul class=" grid">
+                    <li class="col-xs-6 col-sm-3">
+                        <a id="home-tmall-msr" href="#">
+                            <img
+                                src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/images/homepage/tmall-card-01.png">
+                            <p class="title-1"><strong>会员星礼包</strong></p>
+                            <p class="margin2">星享卡新升级<br>更多心意好礼</p>
+                            <p class="caption">了解更多 ›</p>
+                        </a>
+                    </li>
+                    <li class="col-xs-6 col-sm-3">
+                        <a id="home-tmall-svc" href="#">
+                            <img
+                                src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/images/homepage/tmall-card-02.png">
+                            <p class="title-1"><strong>星礼卡</strong></p>
+                            <p class="margin2">用一份心礼<br>让心意相随</p>
+                            <p class="caption">了解更多 ›</p>
+                        </a>
+                    </li>
+                    <li class="col-xs-6 col-sm-3">
+                        <a id="home-tmall-drink" href="#">
+                            <img
+                                src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/images/homepage/tmall-eticket.png">
+                            <p class="title-1"><strong>电子产品券</strong></p>
+                            <p class="margin2">心意<br>从这一杯开始</p>
+                            <p class="caption">了解更多 ›</p>
+                        </a>
+                    </li>
+                    <li class="col-xs-6 col-sm-3">
+                        <a id="home-tmall-coffee" href="#">
+                            <img
+                                src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/images/homepage/tmall-reserve.png">
+                            <p class="title-1"><strong>咖啡生活</strong></p>
+                            <p class="margin2">星巴克<br>用心制作</p>
+                            <p class="caption">了解更多 ›</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- 咖啡星讲堂 -->
+        <div class="coffeehouse">
+            <div class="title">
+                <h2 class="wrapper-mobile">1912 派克街 | 咖啡星讲堂</h2>
+                <p class="light wrapper-mobile">了解更多星巴克咖啡文化</p>
+            </div>
+            <div class="scroll ">
+                <div class="scroll-arrow scroll-arrow-left">
+                    <img src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/icons/icon-scroll-left.svg">
+                </div>
+                <div class="wrapper container-fluid">
+                    <div class="scroll-items">
+                        <a id="home-blog-origin" href="#" class="rect card">
+                            <div class="preview"
+                                style="background-image: url('https://www-static.chinacdn.starbucks.com.cn/prod/assets/images/homepage/coffeehouse-coffee-cultivation-kv.jpg')">
+                            </div>
+                            <span class="tag">咖啡知识</span>
+                            <!-- <time>08/07/2017</time> -->
+                            <span>咖啡的起源与培植</span>
+                        </a>
+                        <a id="home-blog-fundamentals" href="#" class="rect card">
+                            <div class="preview"
+                                style="background-image: url(https://www-static.chinacdn.starbucks.com.cn/prod/assets/images/homepage/coffeehouse-4-fundamentals-kv.jpg)">
+                            </div>
+                            <span class="tag">咖啡品鉴</span>
+                            <!-- <time>08/07/2017</time> -->
+                            <span>咖啡调制</span>
+                        </a>
+                        <a id="home-blog-roast" href="#" class="rect card">
+                            <div class="preview"
+                                style="background-image: url(https://www-static.chinacdn.starbucks.com.cn/prod/assets/images/homepage/coffeehouse-roast-story-kv.jpg)">
+                            </div>
+                            <span class="tag">咖啡知识</span>
+                            <!-- <time>08/07/2017</time> -->
+                            <span>咖啡烘焙</span>
+                        </a>
+                        <a id="home-blog-pour" href="#" class="rect card">
+                            <div class="preview"
+                                style="background-image: url(https://www-static.chinacdn.starbucks.com.cn/prod/assets/images/homepage/coffeehouse-pour-over-kv.jpg)">
+                            </div>
+                            <span class="tag">咖啡品鉴</span>
+                            <!-- <time>08/07/2017</time> -->
+                            <span>手冲咖啡</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="scroll-arrow scroll-arrow-right">
+                    <img src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/icons/icon-scroll-right.svg">
+                </div>
+
+                <script>
+                    var count = 0
+                    $(".content .coffeehouse .scroll-arrow-left").hide()
+                    $(".content .coffeehouse .scroll-arrow-right").click(function () {
+                        $(".content .coffeehouse .scroll-arrow-left").show()
+                        count++
+                        $(".content .coffeehouse .scroll").animate({ marginLeft: -$(".content .coffeehouse .scroll").find(".wrapper .rect").width() * count })
+                        if (count > 1) {
+                            $(this).hide()
+                        }
+                    });
+                    $(".content .coffeehouse .scroll-arrow-left").click(function () {
+                        $(".content .coffeehouse .scroll-arrow-right").show()
+                        count--
+                        $(".content .coffeehouse .scroll").animate({ marginLeft: -$(".content .coffeehouse .scroll").find(".wrapper .rect").width() * count })
+                        if (count < 1) {
+                            $(this).hide()
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <!-- 移动端下方导航条 -->
+    <ul class="footNav">
+        <li id="home-mobile">
+            <a href="#" class="active">
+                <span class="icons">
+                    <img src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/icons/icon-home.svg">
+                    <img src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/icons/icon-home-active.svg">
+                </span>
+                <div id="home-mobile">主页</div>
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <span class="icons">
+                    <img src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/icons/icon-stores.svg">
+                    <img src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/icons/icon-stores-active.svg">
+                </span>
+                <div id="stores-mobile">门店</div>
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <span class="icons">
+                    <img src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/icons/icon-account.svg">
+                    <img src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/icons/icon-account-active.svg">
+                </span>
+                <div id="account-mobile">我的帐户</div>
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <span class="icons">
+                    <img src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/icons/icon-menu.svg">
+                    <img src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/icons/icon-menu-active.svg">
+                </span>
+                <div id="menu-mobile">菜单</div>
+            </a>
+        </li>
+
+        <li>
+            <a class="icon trigger">
+                <span class="icons">
+                    <img src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/icons/icon-more.svg">
+                    <img src="https://www-static.chinacdn.starbucks.com.cn/prod/assets/icons/icon-more-active.svg">
+                </span>
+                <div>更多</div>
+            </a>
+        </li>
+    </ul>
+    <script>
+        $(".footNav li").click(function () {
+            $(this).children("a").addClass("active").end().siblings().children("a").removeClass("active")
+        })
+    </script>
+    <!-- <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="./js/jq.js"></script>
+</body>
+
+</html>
