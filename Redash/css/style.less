@@ -1,0 +1,235 @@
+@white: #ffffff;
+@f8fafa: #f8fafa;
+.btn-primary() {
+    background-color: #2196f3;
+    border-color: #2196f3;
+    color: @white;
+    border-radius: 2px;
+    transition: all .25s;
+}
+
+.btn() {
+    font-size: 14px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    .btn-primary;
+    &:hover {
+        background-color: #51adf6;
+        border-color: #51adf6;
+    }
+}
+
+body {
+    background-color: @f8fafa;
+}
+
+.wrapper {
+    nav {
+        background-color: @white;
+        box-shadow: 0 0 14px -6px rgba(0, 0, 0, .2);
+        @media (max-width: 992px) and (min-width: 768px) {
+            .container {
+                width: auto;
+            }
+        }
+        .container {
+            @media (max-width: 849px) {
+                .navbar-header {
+                    width: 100%;
+                }
+            }
+            .navbar-header {
+                height: 68px;
+                a {
+                    display: inline-block;
+                    padding: 15px;
+                    color: #000;
+                    transition: all .25s;
+
+                    img {
+                        width: 36px;
+                        height: 36px;
+                    }
+                }
+                button {
+                    display: none;
+                    margin-right: -15px;
+                    font-size: 24px;
+                    color: #2196f3;
+                }
+                @media (min-width:768px) {
+                    a{
+                        margin-left: -15px;
+                    }
+                }
+                @media (max-width: 849px) {
+                    .navbar-toggle {
+                        display: block;
+                    }
+                }
+            }
+            .navbar-collapse {
+                padding: 0;
+                .nav {
+                    list-style: none;
+                    a {
+                        &:hover {
+                            background-color: @f8fafa;
+                            border-radius: 2px;
+                        }
+                    }
+                    li {
+                        a {
+                            padding: 8px 15px;
+                            margin-top: 16px;
+                            line-height: 20px;
+                            font-size: 14px;
+                            font-weight: 700;
+                            color: #000;
+                        }
+                    }
+                }
+                .left {
+                    float: left;
+                    .dropdown {
+                        &.open {
+                            .dropdown-toggle {
+                                background-color: @f8fafa;
+                            }
+                        }
+                        .dropdown-menu {
+                            li {
+                                a {
+                                    padding: 5px 15px;
+                                    margin: 0;
+                                    font-weight: 400;
+                                }
+                            }
+                        }
+                    }
+                }
+                .right {
+                    float: right;
+                    .btn {
+                        .btn;
+                        margin-left: 10px;
+                    }
+                }
+            }
+            @media (max-width: 849px) {
+                .navbar-collapse {
+                    display: none;
+                }
+            }
+            @media (min-width: 849px) {
+                .navbar-collapse {
+                    display: block !important;
+                }
+            }
+            @media (max-width: 849px) and (min-width: 768px) {
+                .navbar-collapse {
+                    width: 100%;
+                    padding: 0;
+                    .nav {
+                        float: none;
+                        li {
+                            width: 100%;
+                        }
+                    }
+                    .nav.left {
+                        margin-top: 68px;
+                        background-color: @f8fafa;
+                    }
+                    .nav.right {
+                        background-color: @f8fafa;
+                        .btn {
+                            margin: 17px 0 17px 10px;
+                        }
+                    }
+                }
+            }
+            @media (max-width: 768px) {
+                .navbar-collapse {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    .nav {
+                        float: none;
+                        li {
+                            width: 100%;
+                            a{
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+                .nav.left {
+                    background-color: @f8fafa;
+                    margin-bottom: 0;
+                }
+                .nav.right {
+                    margin-top: 0;
+                    background-color: @f8fafa;
+                    .btn {
+                        margin-top: 0;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .section_databricks {
+        padding: 20px 0;
+        .container {
+            padding: 0 25px;
+            img {
+                width: 290px;
+            }
+            h1 {
+                margin: 50px 0 25px;
+                font-size: 28px;
+                font-weight: 700;
+            }
+            .btn {
+                .btn;
+                padding: 10px 18px;
+                font-weight: 700;
+            }
+        }
+    }
+    @media (min-width:768px) {
+        .section_databricks{
+            padding: 35px 0;
+        }
+    }
+    @media (min-width:992px) {
+        .section_databricks{
+            padding: 50px 0;
+        }
+    }
+    @media (min-width:768px) {
+        .section_databricks {
+            .container {
+                text-align: center;
+                img {
+                    width: 419px;
+                }
+                h1 {
+                    font-size: 32px;
+                }
+                .btn{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    @media (min-width:992px) {
+        .section_databricks {
+            .container {
+                h1 {
+                    font-size: 36px;
+                }
+            }
+        }
+    }
+}
