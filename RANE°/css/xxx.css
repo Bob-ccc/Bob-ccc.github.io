@@ -1,0 +1,200 @@
+body {
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  background: #2D2D2D;
+}
+body .main-container {
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+body .main-container .hero {
+  padding: 75px 0 100px 0;
+}
+body .main-container .hero .row {
+  display: flex;
+  align-items: center;
+}
+body .main-container .hero .row .left .rane {
+  opacity: 0;
+}
+body .main-container .hero .row .left .rane h3 {
+  margin-top: 0;
+  margin-bottom: 45px;
+  font-size: 46px;
+  line-height: 54px;
+}
+body .main-container .hero .row .left .weather {
+  opacity: 0;
+}
+body .main-container .hero .row .left .weather p {
+  color: #eee;
+  font-size: 22px;
+  letter-spacing: 1px;
+  margin-bottom: 55px;
+}
+body .main-container .hero .row .left .download {
+  display: none;
+}
+body .main-container .hero .row .left .download .btn {
+  display: inline-block;
+  height: 55px;
+  color: #fff;
+  line-height: 53px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 100px;
+  padding: 0 36px;
+  border: 1px solid #ffcd05;
+  transition: all 0.3s;
+}
+body .main-container .hero .row .left .download .btn:hover {
+  color: #2D2D2D;
+  border-color: #ffcd05;
+  background-color: #ffcd05;
+}
+body .main-container .hero .row .right {
+  opacity: 0;
+}
+body .main-container .hero .row .right img {
+  max-height: 800px;
+}
+body .main-container .temps {
+  padding: 200px 0 40px 0;
+}
+body .main-container .temps .row {
+  margin-bottom: 80px;
+}
+body .main-container .temps .row .wow {
+  opacity: 0;
+}
+body .main-container .temps .row .wow img {
+  max-width: 100%;
+  margin-bottom: 25px;
+}
+body .main-container .temps .row .wow h4 {
+  padding: 35px 0 10px 0;
+  margin-bottom: 15px;
+  font-size: 36px;
+  line-height: 44px;
+}
+body .main-container .views {
+  padding: 75px 0 100px 0;
+}
+body .main-container .views .row .wow img {
+  max-width: 100%;
+}
+body .main-container .download {
+  padding-bottom: 50px;
+}
+body .main-container .download .container .row .wow h4 {
+  margin-bottom: 75px;
+  font-size: 33px;
+  line-height: 54px;
+}
+body .main-container .download .container .row .wow a {
+  color: #fff;
+  display: inline-block;
+  height: 55px;
+  line-height: 53px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 100px;
+  padding: 0 36px;
+  border: 1px solid #ffcd05;
+  transition: all 0.3s;
+}
+body .main-container .download .container .row .wow a:hover {
+  color: #2D2D2D;
+  border-color: #ffcd05;
+  background-color: #ffcd05;
+}
+body .main-container .footer {
+  padding-top: 40px;
+  margin-bottom: 40px;
+}
+body .main-container .footer .container .row ul {
+  list-style: none;
+  padding: 0;
+}
+body .main-container .footer .container .row ul li {
+  display: inline-block;
+  padding: 0 8px;
+}
+body .main-container .footer .container .row ul li a i {
+  color: #888;
+  font-size: 16px;
+  opacity: 0.5;
+}
+@media (min-width: 768px) {
+  .main-container .hero .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .main-container .hero .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .main-container .hero .container {
+    width: 1170px;
+  }
+}
+@media (max-width: 768px) {
+  .main-container .hero .container .row {
+    display: block;
+  }
+  .main-container .hero .container .row .left .download {
+    padding-bottom: 0 !important;
+  }
+  .main-container .hero .container .row .left .download a {
+    font-size: 10px !important;
+    padding: 0 20px !important;
+    line-height: 28px !important;
+    height: 31px !important;
+    margin-bottom: 40px;
+  }
+  .main-container .temps {
+    padding: 40px 0 20px 0 !important;
+  }
+  .main-container .temps .container .row > div {
+    margin-bottom: 40px;
+  }
+  .main-container .views {
+    padding: 40px 0 !important;
+  }
+  .main-container .views .container .row .wow img {
+    margin-bottom: 100px;
+  }
+  .main-container .download .container .row a {
+    font-size: 10px !important;
+    padding: 0 20px !important;
+    line-height: 28px !important;
+    height: 31px !important;
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 991px) {
+  .main-container .hero {
+    padding: 40px 0 !important;
+  }
+  .main-container .hero .row .left .rane h3 {
+    font-size: 36px !important;
+    margin-bottom: 25px !important;
+  }
+  .main-container .hero .row .left .weather p {
+    margin-bottom: 25px !important;
+    font-size: 16px !important;
+  }
+  .main-container .hero .row .right img {
+    max-height: 500px !important;
+  }
+  .main-container .temps .container .row h4 {
+    font-size: 26px !important;
+    margin-top: 0 !important;
+    line-height: 30px !important;
+  }
+}
