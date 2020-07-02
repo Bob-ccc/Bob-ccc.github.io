@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时间钟</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+            background-color: #000000;
+        }
+
+        .wrapper {
+            margin: 0 auto;
+            top: 50%;
+            margin-top: -50px;
+            text-align: center;
+            height: 100px;
+            position: relative;
+            /* overflow: hidden; */
+        }
+
+        .wrapper .column,
+        .wrapper .colon {
+            display: inline-block;
+            font-size: 60px;
+            color: #ffffff;
+            vertical-align: top;
+            height: 100px;
+            line-height: 100px;
+            transition: all .3s;
+        }
+
+        .wrapper .column div,
+        .wrapper .colon div {
+            width: 50px;
+            height: 100px;
+        }
+
+        .wrapper .column div.active {
+            opacity: 1;
+        }
+
+        .wrapper .column div.neighor {
+            opacity: .5;
+        }
+
+        .wrapper .column div.far {
+            opacity: .2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="column">
+            <div>0</div>
+            <div>1</div>
+            <div>2</div>
+        </div>
+        <div class="column">
+            <div>0</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+        </div>
+        <div class="colon">:</div>
+        <div class="column">
+            <div>0</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        <div class="column">
+            <div>0</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+        </div>
+        <div class="colon">:</div>
+        <div class="column">
+            <div>0</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+        <div class="column">
+            <div>0</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+        </div>
+    </div>
+    <script>
+        var column = document.getElementsByClassName("column");
+        // 定义函数获取当前时分秒
+        function getdate() {
+            var date = new Date();
+            var hour = date.getHours();
+            var minutes = date.getMinutes();
+            var second = date.getSeconds();
+            return [hour, minutes, second];
+        }
+        function showNum(element, n) {
+            element.style.marginTop = n * -100 + "px"
+        }
+        // 定义函数渲染
+        function run() {
+            // 接受getdate函数返回的数组
+            var arr = getdate();
+            // 处理数组
+            var arr1 = [
+                Math.floor(arr[0] / 10),
+                arr[0] % 10,
+                Math.floor(arr[1] / 10),
+                arr[1] % 10,
+                Math.floor(arr[2] / 10),
+                arr[2] % 10
+            ];
+            console.log(arr1)
+            // 设置位置
+            arr1.forEach(function (element, index) {
+                var divs = column[index].querySelectorAll("div");
+                divs.forEach(function (div, i) {
+                    if (element === i) {
+                        div.className = "active";
+                    } else if (element === i - 1 || element === i + 1) {
+                        div.className = "neighor";
+                    } else {
+                        div.className = "far";
+                    }
+                })
+                showNum(column[index], element);
+            });
+        }
+        // 初始化
+        run();
+        // 定时器
+        setInterval(function () {
+            run()
+        }, 500)
+
+    </script>
+</body>
+
+</html>

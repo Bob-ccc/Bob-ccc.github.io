@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态数字时钟</title>
+    <style>
+        html,
+        body {
+            background: #000;
+            height: 100%;
+        }
+
+        .content {
+            width: 820px;
+            height: 200px;
+            margin: 0 auto;
+            top: 50%;
+            margin-top: -100px;
+            position: relative;
+        }
+
+        .content .num {
+            width: 120px;
+            height: 200px;
+            position: relative;
+            float: left;
+        }
+
+        .content .num:nth-child(2) {
+            margin-right: 50px;
+        }
+
+        .content .num:nth-child(2)::after {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin-top: 90px;
+            margin-left: 135px;
+            border-radius: 50%;
+            background-color: #c00;
+        }
+
+        .content .num:nth-child(4) {
+            margin-right: 50px;
+        }
+
+        .content .num:nth-child(4)::after {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin-top: 90px;
+            margin-left: 135px;
+            border-radius: 50%;
+            background-color: #c00;
+        }
+
+        .content .num div {
+            width: 80px;
+            height: 10px;
+            border-radius: 5px;
+            background-color: #c00;
+            position: absolute;
+            opacity: .15;
+        }
+
+        .content .num div.active {
+            opacity: 1;
+            box-shadow: 0 0 50px rgba(255, 0, 0, .7);
+        }
+
+        .content .num div:nth-child(1) {
+            top: 10px;
+            left: 20px;
+        }
+
+        .content .num div:nth-child(2) {
+            top: 20px;
+            width: 10px;
+            height: 75px;
+            right: 10px;
+        }
+
+        .content .num div:nth-child(3) {
+            top: 105px;
+            width: 10px;
+            height: 75px;
+            right: 10px;
+        }
+
+        .content .num div:nth-child(4) {
+            bottom: 10px;
+            left: 20px;
+        }
+
+        .content .num div:nth-child(5) {
+            top: 105px;
+            width: 10px;
+            height: 75px;
+            left: 10px;
+        }
+
+        .content .num div:nth-child(6) {
+            top: 20px;
+            width: 10px;
+            height: 75px;
+            left: 10px;
+        }
+
+        .content .num div:nth-child(7) {
+            top: 95px;
+            left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+    </div>
+
+    <script>
+        var content = document.querySelector(".content");
+        for (var i = 0; i < 6; i++) {
+            var num = document.createElement("div");
+            num.className = "num"
+            for (var j = 0; j < 7; j++) {
+                var div = document.createElement("div");
+                num.appendChild(div)
+            }
+            content.appendChild(num)
+        }
+        var nums = document.querySelectorAll(".num")
+        // 0-9数组
+        var arrNum = [[0, 1, 2, 3, 4, 5], [1, 2], [0, 1, 6, 4, 3], [0, 1, 6, 2, 3], [5, 6, 1, 2], [0, 5, 6, 2, 3], [0, 5, 4, 3, 2, 6], [0, 1, 2], [0, 1, 2, 3, 4, 5, 6], [0, 5, 1, 6, 2, 3]]
+        // 定义函数获取当前时分秒 
+        function getdate() {
+            var date = new Date();
+            var hour = date.getHours();
+            var minutes = date.getMinutes();
+            var second = date.getSeconds();
+            var arr = [
+                Math.floor(hour / 10),
+                hour % 10,
+                Math.floor(minutes / 10),
+                minutes % 10,
+                Math.floor(second / 10),
+                second % 10
+            ];
+            return arr;
+        }
+        // 定时器
+        setInterval(function () {
+            var arr = getdate();
+            nums.forEach(function (element, index) {
+                for (var i = 0; i < element.children.length; i++) {
+                    element.children[i].className = ""
+                }
+                arrNum[arr[index]].forEach(function (ele) {
+                    element.children[ele].className = "active"
+                })
+                // console.log (element.children,arr[index],arrNum[arr[index]])
+            })
+        }, 500)
+
+    </script>
+</body>
+
+</html>
