@@ -1,34 +1,53 @@
+body {
+  background-color: #f0f0f0;
+}
 h1 {
   font-size: 48px;
   text-align: center;
   font-weight: bolder;
   color: skyblue;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
-.bootstrap {
+.content {
   text-align: center;
 }
-.bootstrap .row {
+.content .box img {
+  border: 1px solid black;
+  transition: all 0.5s;
+}
+.content .box img:hover {
+  margin-top: -10px;
+  box-shadow: 5px 5px 10px #888888;
+}
+.content .bootstrap .row {
+  border-bottom: 2px solid gray;
   padding: 20px;
 }
-.bootstrap .row .bsbox a img {
+.content .bootstrap .row .box {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.content .bootstrap .row .box a img {
   max-width: 100%;
 }
-.bootstrap .row .bsbox p {
-  display: inline-block;
+.content .bootstrap .row .box p {
   margin-top: 20px;
   width: 100%;
-  text-align: center;
-  z-index: 99;
-  font-size: 24px;
-  font-weight: bolder;
+  font-weight: bold;
 }
-.clock {
-  text-align: center;
+.content .js .clock {
+  border-bottom: 1px solid gray;
 }
-.clock .row {
+.content .js .row {
   padding: 20px;
 }
-.clock .row a img {
+.content .js .row a img {
   max-width: 100%;
+}
+.content .js .row p {
+  margin-top: 20px;
+  width: 100%;
+  font-weight: bold;
 }
 /*# sourceMappingURL=./style.css.map */

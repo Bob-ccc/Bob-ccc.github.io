@@ -1,37 +1,61 @@
+body {
+    background-color: #f0f0f0;
+}
 h1 {
     font-size: 48px;
     text-align: center;
     font-weight: bolder;
     color: skyblue;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
-.bootstrap {
+.content {
     text-align: center;
-    .row {
-        padding: 20px;
-        .bsbox {
-            a img {
-                max-width: 100%;
-            }
-            p {
-                display: inline-block;
-                margin-top: 20px;
-                width: 100%;
-                text-align: center;
-                z-index: 99;
-                font-size: 24px;
-                font-weight: bolder;
+    .box {
+        img {
+            border: 1px solid black;
+            transition: all .5s;
+            &:hover {
+                margin-top: -10px;
+                box-shadow: 5px 5px 10px #888888;
             }
         }
     }
-}
-
-.clock {
-    text-align: center;
-    .row {
-        padding: 20px;
-        a img {
-            max-width: 100%;
+    .bootstrap {
+        .row {
+            border-bottom: 2px solid gray;
+            padding: 20px;
+            .box {
+                padding-left: 30px;
+                padding-right: 30px;
+                a img {
+                    max-width: 100%;
+                }
+                p {
+                    margin-top: 20px;
+                    width: 100%;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    .js {
+        .clock{
+            border-bottom: 1px solid gray;
+        }
+        .row {
+            padding: 20px;
+            a {
+                img {
+                    max-width: 100%;
+                }
+            }
+            p {
+                margin-top: 20px;
+                width: 100%;
+                font-weight: bold;
+            }
         }
     }
 }
