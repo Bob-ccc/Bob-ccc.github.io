@@ -24,6 +24,7 @@ body {
 }
 
 .wrapper {
+    // 导航部分
     nav {
         background-color: @white;
         box-shadow: 0 0 14px -6px rgba(0, 0, 0, .2);
@@ -175,7 +176,7 @@ body {
                 }
             }
         }
-    }
+    } // section_databricks部分
     .section_databricks {
         padding: 20px 0;
         .container {
@@ -221,7 +222,7 @@ body {
                 }
             }
         }
-    }
+    } // section_hero部分
     .section_hero {
         background-color: @white;
         padding: 20px 0;
@@ -260,14 +261,14 @@ body {
             padding: 50px 0;
             .container {
                 .row {
-                    h1{
+                    h1 {
                         margin: 50px 0 25px;
                         font-size: 36px;
                     }
                     .browser-container {
                         box-shadow: 0 6px 18px -5px hsla(0, 0%, 68.6%, .5);
                         width: 720px;
-                        img{
+                        img {
                             width: inherit;
                         }
                     }
@@ -279,6 +280,64 @@ body {
         .section_hero {
             padding: 25px 0 125px;
         }
+    } // section_users部分
+    .section_users {
+        padding: 20px 0;
+        .container {
+            text-align: center;
+            padding-left: 25px;
+            padding-right: 25px;
+            .row {
+                .col-sm-7 {
+                    margin-bottom: 20px;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .col-sm-5 {
+                    h3 {
+                        font-size: 20px;
+                        font-style: italic;
+                        font-weight: 100;
+                        margin-bottom: 20px;
+                    }
+                    p {
+                        font-size: 15px;
+                        img {
+                            border-radius: 50%;
+                        }
+                        a {
+                            text-decoration: none;
+                            color: #2196f3;
+                            &:hover {
+                                background-color: #daeeff;
+                                ;
+                            }
+                        }
+                    }
+                    .btn {
+                        min-height: 34px;
+                        padding: 8px 16px;
+                    }
+                    .btn-secondary {
+                        display: inline-block;
+                        background: #fff;
+                        border: 1px solid rgba(33, 150, 243, .2);
+                        box-shadow: 0 6px 13px -6px rgba(33, 150, 243, .25);
+                        border-radius: 2px;
+                        font-weight: 700;
+                        font-size: 13px;
+                        color: #2196f3;
+                        text-align: center;
+                        transition: all .3s ease;
+                        &:hover{
+                            border: 1px solid rgba(33,150,243,.4);
+                            box-shadow: 0 6px 17px -3px rgba(33,150,243,.2);
+                            color: #2196f3;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
-

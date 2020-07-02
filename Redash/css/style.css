@@ -253,4 +253,58 @@ body {
     padding: 25px 0 125px;
   }
 }
+.wrapper .section_users {
+  padding: 20px 0;
+}
+.wrapper .section_users .container {
+  text-align: center;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.wrapper .section_users .container .row .col-sm-7 {
+  margin-bottom: 20px;
+}
+.wrapper .section_users .container .row .col-sm-7 img {
+  width: 100%;
+}
+.wrapper .section_users .container .row .col-sm-5 h3 {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 100;
+  margin-bottom: 20px;
+}
+.wrapper .section_users .container .row .col-sm-5 p {
+  font-size: 15px;
+}
+.wrapper .section_users .container .row .col-sm-5 p img {
+  border-radius: 50%;
+}
+.wrapper .section_users .container .row .col-sm-5 p a {
+  text-decoration: none;
+  color: #2196f3;
+}
+.wrapper .section_users .container .row .col-sm-5 p a:hover {
+  background-color: #daeeff;
+}
+.wrapper .section_users .container .row .col-sm-5 .btn {
+  min-height: 34px;
+  padding: 8px 16px;
+}
+.wrapper .section_users .container .row .col-sm-5 .btn-secondary {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid rgba(33, 150, 243, 0.2);
+  box-shadow: 0 6px 13px -6px rgba(33, 150, 243, 0.25);
+  border-radius: 2px;
+  font-weight: 700;
+  font-size: 13px;
+  color: #2196f3;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.wrapper .section_users .container .row .col-sm-5 .btn-secondary:hover {
+  border: 1px solid rgba(33, 150, 243, 0.4);
+  box-shadow: 0 6px 17px -3px rgba(33, 150, 243, 0.2);
+  color: #2196f3;
+}
 /*# sourceMappingURL=./style.css.map */
