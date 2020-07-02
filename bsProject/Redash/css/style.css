@@ -206,6 +206,7 @@ body {
   }
 }
 .wrapper .section_hero {
+  overflow: hidden;
   background-color: #ffffff;
   padding: 20px 0;
 }
@@ -267,11 +268,17 @@ body {
 .wrapper .section_users .container .row .col-sm-7 img {
   width: 100%;
 }
+@media (min-width: 1200px) {
+  .wrapper .section_users .container .row .col-sm-7 img {
+    width: 75% !important;
+  }
+}
 .wrapper .section_users .container .row .col-sm-5 h3 {
   font-size: 20px;
   font-style: italic;
   font-weight: 100;
   margin-bottom: 20px;
+  line-height: 1.3;
 }
 .wrapper .section_users .container .row .col-sm-5 p {
   font-size: 15px;
@@ -306,5 +313,105 @@ body {
   border: 1px solid rgba(33, 150, 243, 0.4);
   box-shadow: 0 6px 17px -3px rgba(33, 150, 243, 0.2);
   color: #2196f3;
+}
+@media (min-width: 768px) {
+  .wrapper .section_users {
+    padding: 35px 0;
+  }
+  .wrapper .section_users .container .row .col-sm-7 {
+    margin-bottom: 0;
+  }
+  .wrapper .section_users .container .row .col-sm-7 img {
+    width: 100%;
+  }
+  .wrapper .section_users .container .row .col-sm-5 {
+    text-align: left;
+  }
+  .wrapper .section_users .container .row .col-sm-5 h3 {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 992px) {
+  .wrapper .section_users {
+    padding: 25px 0;
+  }
+  .wrapper .section_users .container .row .col-sm-5 h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+.wrapper .section_feature {
+  background-color: #ffffff;
+  padding: 20px 0;
+}
+.wrapper .section_feature .container {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.wrapper .section_feature .container .row .left {
+  line-height: 1.5;
+}
+.wrapper .section_feature .container .row .left img {
+  width: 75%;
+}
+.wrapper .section_feature .container .row .left h2 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 700;
+}
+.wrapper .section_feature .container .row .left .highlight-p {
+  margin-bottom: 25px;
+  color: #707070;
+}
+.wrapper .section_feature .container .row .left .highlight-ul {
+  padding: 0 0 0 25px;
+  margin: 0;
+  line-height: 30px;
+  list-style-image: url('https://redash.io/assets/images/elements/check.svg');
+}
+.wrapper .section_feature .container .row .left .highlight-ul li {
+  font-size: 14px;
+}
+.wrapper .section_feature .container .row .right img {
+  width: 75%;
+}
+@media (min-width: 768px) {
+  .wrapper .section_feature {
+    padding: 35px 0;
+  }
+  .wrapper .section_feature .container .row .left {
+    line-height: 30px;
+  }
+  .wrapper .section_feature .container .row .right img {
+    width: 90%;
+  }
+}
+@media (min-width: 992px) {
+  .wrapper .section_feature {
+    padding: 50px 0;
+  }
+  .wrapper .section_feature .container .row .left h2 {
+    margin-top: 50px;
+  }
+  .wrapper .section_feature .container .row .left .highlight-p {
+    width: 90%;
+    font-size: 18px;
+  }
+  .wrapper .section_feature .container .row .left .highlight-ul li {
+    font-size: 16px;
+  }
+  .wrapper .section_feature .container .row .right img {
+    width: 90%;
+  }
+}
+@media (min-width: 1200px) {
+  .wrapper .section_feature {
+    padding: 100px 0 0 0;
+  }
+  .wrapper .section_feature .container .row .left .highlight-p {
+    width: 75%;
+  }
 }
 /*# sourceMappingURL=./style.css.map */
