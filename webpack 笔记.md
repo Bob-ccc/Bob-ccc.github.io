@@ -1,6 +1,6 @@
 # webpack笔记
 
-#### 1安装cnpm(可以加快安装速度)
+#### 1安装cnpm(可以加快安装速度 淘宝镜像)
 npm config set registry https://registry.npm.taobao.org
 
 #### 2--save-dev 本地安装
