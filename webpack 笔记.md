@@ -175,7 +175,11 @@ src/index.js
 
 #### 并且在 src/index.js 文件中使用这个函数：
 src/index.js
+在开头引入
 >import printMe from './print.js';
+
+在尾部调用
+>printMe();
 
 #### 调整配置。在webpack.config.js中，我们将在 entry 添加 src/print.js 作为新的入口起点（print），然后修改 output，以便根据入口起点名称动态生成名称：
 webpack.config.js
@@ -244,3 +248,41 @@ webpack.config.js
       template: "./src/index.html",
     })
   ],
+
+## 开发
+
+#### 使用 source map
+#### 配置webpack.config.js
+在module.exports中添加devtool对象
+webpack.config.js
+>devtool: 'inline-source-map',
+#### 执行命令后，当js文件有错误是，会有js映射，而不是指向dist中编译过的js
+如当js出现错误是浏览器控制台会显示
+Uncaught ReferenceError: consol is not defined (print.js:2 )
+
+## 观察模式 webpack's Watch Mode
+#### package.json配置
+在"scripts"中添加
+package.json
+>"watch": "webpack --watch",
+#### 执行 npm run watch
+执行后bash终端处于观察模式，一直在等待，保存后实现自动编译
+由于vs code 可以安装live sever 插件，浏览器会自动刷新，如果没有安装或者是使用其他开发工具，需要手动刷新，如果想要实现浏览器自动刷新，就需要webpack-dev-server
+## 使用webpack-dev-server
+#### 安装webpack-dev-server
+npm install --save-dev webpack-dev-server
+#### 配置
+安装webpack-dev-server完成后，在module.exports中添加devServer
+webpack.config.js
+> devServer: {
+    contentBase: './dist'
+  },
+#### 以上配置告知 webpack-dev-server，在 localhost:8080 下建立服务，将 dist 目录下的文件，作为可访问文件。
+#### 让我们添加一个 script 脚本，可以直接运行开发服务器(dev server)
+在"scripts"中添加
+package.json
+>"start": "webpack-dev-server --open",
+#### 执行 npm start
+执行后就会看到浏览器自动加载页面。如果现在修改和保存任意源文件，web 服务器就会自动重新加载编译后的代码。
+正常情况下成功时浏览器网址为http://localhost:8080/
+
