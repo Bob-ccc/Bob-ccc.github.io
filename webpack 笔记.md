@@ -23,16 +23,16 @@ npm init
 #### 6在根目录新建一个index.html  再新建一个src文件夹里面放index.js
 
 index.html内容为
-<!doctype html>
-<html>
-  <head>
-    <title>起步</title>
-    <script src="https://unpkg.com/lodash@4.16.6"></script>
-  </head>
-  <body>
-    <script src="./src/index.js"></script>
-  </body>
-</html>
+><!doctype html>
+\<html>
+  \<head>
+    \<title>起步</title>
+    \<script src="https://unpkg.com/lodash@4.16.6"></script>
+  \</head>
+  \<body>
+    \<script src="./src/index.js"></script>
+  \</body>
+\</html>
 
 index.js的内容为
 
@@ -48,7 +48,7 @@ document.body.appendChild(component());
 
 #### 7在跟目录新建一个dist文件夹 把index.html移动到里面
 
-#### 8把两个script删掉新增一个<script src="main.js"></script>
+#### 8把index.js中两个script删掉新增一个<script src="main.js"></script>
 
 #### 9在终端输入 npm install --save lodash
 
@@ -66,8 +66,14 @@ npx webpack -o xx.js
 
 ##### 配置文件 当前项目根目录node_modules同级  package.json
 webpack.config.js
-npx webpack
-
+>const path = require('path');
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist')
+  }
+};
 ##### 默认指定 webpack.config.js 作为配置文件
 npx webpack --config webpack.config.test.js
 
@@ -79,7 +85,7 @@ npm start
 # 加载 CSS
 npm install --save-dev style-loader css-loader
 
-#### 改变webpack.config.js的内容,加上
+#### 改变webpack.config.js的内容,在module.exports中加上
 > module: {
         rules: [
           {
@@ -113,7 +119,9 @@ npm install --save-dev less-loader less
             }]
         }]
 
-#### 将style.css 改为.less   index.js文件引用时也要改变那个后缀
+#### 将style.css 改为将 style.less   
+index.js文件引用时也要改变那个后缀
+webpack.config.js中的rules中test正则也要把css改为less
 #### 运行命令npx webpack即可
 
 # 加载图片
@@ -124,18 +132,18 @@ npm install --save-dev file-loader
 >module: {
       rules: [
         {
-          test: /\.css$/,
+          test: /\.css\$/,
           use: [
             'style-loader',
             'css-loader'
           ]
         },
-+       {
-+         test: /\.(png|svg|jpg|gif)$/,
-+         use: [
-+           'file-loader'
-+         ]
-+       }
+       {
+          test: /\.(png|svg|jpg|gif)$/,
+          use: [
+           'file-loader'
+          ]
+        }
       ]
     }
 	
@@ -145,18 +153,18 @@ npm install --save-dev file-loader
 #### 在src/index.js中引入
 src/index.js
 
->  import _ from 'lodash';
+> import _ from 'lodash';
   import './style.css';
-+ import Icon from './icon.png';
+  import Icon from './图片名';
   function component() {
     var element = document.createElement('div');
     // Lodash，现在由此脚本导入
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
     element.classList.add('hello');
-+   // 将图像添加到我们现有的 div。
-+   var myIcon = new Image();
-+   myIcon.src = Icon;
-+   element.appendChild(myIcon);
+   // 将图像添加到我们现有的 div。
+    var myIcon = document.createElement("img");
+   myIcon.src = Icon;
+   element.appendChild(myIcon);
     return element;
   }
   document.body.appendChild(component());
@@ -230,7 +238,7 @@ webpack.config.js
 >const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 在module.exports中的plugins加入
->new CleanWebpackPlugin(['dist'])
+>new CleanWebpackPlugin()
 
 #### 执行npx webpack
 再检查 /dist 文件夹。如果一切顺利，应该不会再看到旧的文件，只有构建后生成的文件！
@@ -265,7 +273,7 @@ Uncaught ReferenceError: consol is not defined (print.js:2 )
 在"scripts"中添加
 package.json
 >"watch": "webpack --watch",
-#### 执行 npm run watch
+#### 执行 npm run watch 或者不配置watch直接npx webpack --watch
 执行后bash终端处于观察模式，一直在等待，保存后实现自动编译
 由于vs code 可以安装live sever 插件，浏览器会自动刷新，如果没有安装或者是使用其他开发工具，需要手动刷新，如果想要实现浏览器自动刷新，就需要webpack-dev-server
 ## 使用webpack-dev-server
