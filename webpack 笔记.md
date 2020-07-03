@@ -58,20 +58,20 @@ import _ from 'lodash';
 #### 11最后在终端执行 npx webpack
 #### 如果dist自动生成了一个main.js文件说已经成功了
 
-# 入口文件 默认src/index.js
-# 出口文件 默认dist/main.js
+##### 入口文件 默认src/index.js
+##### 出口文件 默认dist/main.js
 
-# 指定出口 (指定生成谁)
+##### 指定出口 (指定生成谁)
 npx webpack -o xx.js
 
-# 配置文件 当前项目根目录node_modules同级  package.json
+##### 配置文件 当前项目根目录node_modules同级  package.json
 webpack.config.js
 npx webpack
 
-# 默认指定 webpack.config.js 作为配置文件
+##### 默认指定 webpack.config.js 作为配置文件
 npx webpack --config webpack.config.test.js
 
-# 手动指定配置文件
+##### 手动指定配置文件
 npm test
 npm run yyy
 npm start
@@ -79,7 +79,7 @@ npm start
 # 加载 CSS
 npm install --save-dev style-loader css-loader
 
-# 改变webpack.config.js的内容,加上
+#### 改变webpack.config.js的内容,加上
 > module: {
         rules: [
           {
@@ -92,16 +92,16 @@ npm install --save-dev style-loader css-loader
         ]
       }
 	  
-# 在src创建一个style.css文件内容改变body背景颜色
-# 在index.js 引用.css 前面加上 import './style.css';
+#### 在src创建一个style.css文件内容改变body背景颜色
+#### 在index.js 引用.css 前面加上 import './style.css';
 
-# 运行命令npx webpack
+#### 运行命令npx webpack
 <!-- 背景变颜色 -->
 
 # 安装less-loader
 npm install --save-dev less-loader less
 
-# 改变webpack.config.js里面为
+#### 改变webpack.config.js里面为
 >rules: [{
             test: /\.less$/,
             use: [{
@@ -113,14 +113,14 @@ npm install --save-dev less-loader less
             }]
         }]
 
-# 将style.css 改为.less   index.js文件引用时也要改变那个后缀
-# 运行命令npx webpack即可
+#### 将style.css 改为.less   index.js文件引用时也要改变那个后缀
+#### 运行命令npx webpack即可
 
-#加载图片
-# 安装file-loader
+# 加载图片
+#### 安装file-loader
 npm install --save-dev file-loader
 
-# 给webpack.config.js里面的rules添加test对象
+#### 给webpack.config.js里面的rules添加test对象
 >module: {
       rules: [
         {
@@ -140,9 +140,9 @@ npm install --save-dev file-loader
     }
 	
 
-# 在src目录中添加图片
+#### 在src目录中添加图片
 
-# 在src/index.js中引入
+#### 在src/index.js中引入
 src/index.js
 
 >  import _ from 'lodash';
@@ -161,4 +161,86 @@ src/index.js
   }
   document.body.appendChild(component());
 
-# 运行命令npx webpack可以看到div追加了图片
+#### 运行命令npx webpack可以看到div追加了图片
+
+
+# 管理输出
+
+## 预先准备
+
+#### 在 src中新建print.js ，并在print.js中添加一些逻辑：
+>export default function printMe() {
+  console.log('I get called from print.js!');
+}
+
+#### 并且在 src/index.js 文件中使用这个函数：
+src/index.js
+>import printMe from './print.js';
+
+#### 调整配置。在webpack.config.js中，我们将在 entry 添加 src/print.js 作为新的入口起点（print），然后修改 output，以便根据入口起点名称动态生成名称：
+webpack.config.js
+
+>module.exports = {
+    entry: {
+      index: './src/index.js',
+      another: './src/print.js'
+    },
+    output: {
+      filename: '[name].[chunkhash].js',
+      path: path.resolve(__dirname, 'dist')
+    }
+  };
+
+#### 执行npx webpack后dist目录生成
+例如 
+another.4fb794f2f2b47836393d.js
+index.76d6b39cb8fdd7996bfd.js
+
+## 设定 HtmlWebpackPlugin
+
+#### 首先安装插件，
+npm install --save-dev html-webpack-plugin
+#### 并且调整 webpack.config.js 文件
+webpack.config.js
+开头引入
+>const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports中加入plugins对象
+
+> plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Output Management'
+    })
+  ],
+
+#### 执行npx webpack
+虽然在 dist/ 文件夹我们已经有 index.html 这个文件，然而 HtmlWebpackPlugin 还是会默认生成 index.html 文件。这就是说，它会用新生成的 index.html 文件，把我们的原来的替换。
+
+## 清理 /dist 文件夹
+
+#### 安装插件clean-webpack-plugin
+npm install clean-webpack-plugin --save-dev
+#### 配置
+webpack.config.js
+开头加入
+>const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+
+在module.exports中的plugins加入
+>new CleanWebpackPlugin(['dist'])
+
+#### 执行npx webpack
+再检查 /dist 文件夹。如果一切顺利，应该不会再看到旧的文件，只有构建后生成的文件！
+
+## index.html模板
+#### 在src/目录中新建一个index.html
+#### 配置
+webpack.config.js
+在plugins的new HtmlWebpackPlugin中添加，完成如下
+>plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Output Management',
+      minify: "false",
+      template: "./src/index.html",
+    })
+  ],
