@@ -9,15 +9,26 @@ h1 {
   margin-top: 40px;
   margin-bottom: 20px;
 }
+p {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  font-weight: bold;
+}
 .content {
   text-align: center;
 }
 .content .box img {
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .content .box img:hover {
   margin-top: -10px;
-  box-shadow: 5px 5px 10px #888888;
+  -webkit-box-shadow: 5px 5px 10px #888888;
+     -moz-box-shadow: 5px 5px 10px #888888;
+          box-shadow: 5px 5px 10px #888888;
 }
 .content .bootstrap .row {
   border-bottom: 2px solid gray;
@@ -30,11 +41,6 @@ h1 {
 .content .bootstrap .row .box a img {
   max-width: 100%;
 }
-.content .bootstrap .row .box p {
-  margin-top: 20px;
-  width: 100%;
-  font-weight: bold;
-}
 .content .js .clock {
   border-bottom: 1px solid gray;
 }
@@ -43,10 +49,5 @@ h1 {
 }
 .content .js .row a img {
   max-width: 100%;
-}
-.content .js .row p {
-  margin-top: 20px;
-  width: 100%;
-  font-weight: bold;
 }
 /*# sourceMappingURL=./style.css.map */
