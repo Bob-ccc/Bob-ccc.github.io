@@ -1,3 +1,3 @@
 $("nav button").click(function(){
-    $("nav .navbar-collapse").toggle()
+    $("nav .navbar-collapse").stop().toggle(500)
 })
