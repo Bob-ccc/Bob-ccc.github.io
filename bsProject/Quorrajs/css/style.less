@@ -1,0 +1,92 @@
+html {
+    font-family: sans-serif;
+}
+
+body {
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+}
+
+.sticky-wrapper {
+    background-color: rgba(66, 134, 245, .9);
+    .navbar {
+        margin: 0;
+        
+        height: 92px;
+        background-color: rgba(66, 134, 245, .9);
+        border: none;
+        border-radius: 0;
+        .container {
+            height: 100%;
+            .navbar-header {
+                height: 100%;
+                .navbar-brand {
+                    margin: 0;
+                    height: 100%;
+                    font-size: 24px;
+                    padding: 0;
+                    line-height: 90px;
+                    padding-right: 15px;
+                    img {
+                        display: inline-block;
+                        margin-right: 10px;
+                    }
+                    span {
+                        color: #fff;
+                        font-family: Urba;
+                        font-size: 35px;
+                        vertical-align: middle;
+                    }
+                }
+            }
+            .navbar-collapse {
+                padding: 0;
+                height: 100%;
+                .navbar-nav {
+                    &>li {
+                        &>a {
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            line-height: 90px;
+                            color: #fff;
+                            font-size: 16px;
+                            &.dropdown-toggle {
+                                background-color: transparent;
+                            }
+                        }
+                        .dropdown-menu {
+                            // margin-top: 1px;
+                            background: #3367d5;
+                            text-shadow: none;
+                            min-width: 200px;
+                            border-radius: 0;
+                            padding: 0;
+                            border: none;
+                            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 4px 0px rgba(84, 125, 144, 0.3);
+                            li {
+                                &:hover {
+                                    a {
+                                        background-color: #fff;
+                                        color: rgba(66, 134, 245, .9);
+                                    }
+                                }
+                                &:nth-of-type(1) {
+                                    a {
+                                        border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+                                    }
+                                }
+                                a {
+                                    font-size: 14px;
+                                    line-height: 20px;
+                                    padding-top: 8px;
+                                    padding-bottom: 8px;
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

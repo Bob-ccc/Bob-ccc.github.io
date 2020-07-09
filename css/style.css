@@ -41,6 +41,22 @@ p {
 .content .bootstrap .row .box a img {
   max-width: 100%;
 }
+.content .css3 .row {
+  border-bottom: 2px solid gray;
+  padding: 20px;
+}
+.content .css3 .row .box {
+  max-height: 300px;
+}
+.content .css3 .row .box a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.content .css3 .row .box a img {
+  max-width: 100%;
+  width: auto;
+}
 .content .js .clock {
   border-bottom: 1px solid gray;
 }
