@@ -6,6 +6,7 @@
   text-align: center;
 }
 .container .row > div .btn {
+  cursor: pointer;
   -webkit-box-shadow: none;
      -moz-box-shadow: none;
           box-shadow: none;

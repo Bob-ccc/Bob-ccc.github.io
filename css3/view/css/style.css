@@ -23,6 +23,7 @@ body {
           align-items: center;
 }
 .all .content {
+  cursor: pointer;
   position: relative;
   min-width: 200px;
   min-height: 200px;

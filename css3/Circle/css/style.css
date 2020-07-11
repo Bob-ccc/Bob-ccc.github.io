@@ -85,6 +85,7 @@
   opacity: 1;
 }
 .container .row .col-sm-6 .circle {
+  cursor: pointer;
   width: 220px;
   height: 220px;
   position: relative;
