@@ -307,11 +307,13 @@ body {
           transform: rotate(-60deg) translateZ(200px);
 }
 .stage.active .content .chart .box ul li:nth-of-type(1)::before {
-  content: "20,000";
   width: 200px;
 }
 .stage.active .content .chart .box ul li:nth-of-type(1)::after {
   width: 200px;
+}
+.stage.active .content .chart .box ul li:nth-of-type(1)::before {
+  content: "20,000";
 }
 .stage.active .content .chart .box ul li:nth-of-type(2) {
   -webkit-transform: rotate(-60deg) translateZ(100px);
@@ -319,11 +321,13 @@ body {
           transform: rotate(-60deg) translateZ(100px);
 }
 .stage.active .content .chart .box ul li:nth-of-type(2)::before {
-  content: "10,000";
   width: 100px;
 }
 .stage.active .content .chart .box ul li:nth-of-type(2)::after {
   width: 100px;
+}
+.stage.active .content .chart .box ul li:nth-of-type(2)::before {
+  content: "10,000";
 }
 .stage.active .content .chart .box ul li:nth-of-type(3) {
   -webkit-transform: rotate(-60deg) translateZ(150px);
@@ -331,11 +335,13 @@ body {
           transform: rotate(-60deg) translateZ(150px);
 }
 .stage.active .content .chart .box ul li:nth-of-type(3)::before {
-  content: "15,000";
   width: 150px;
 }
 .stage.active .content .chart .box ul li:nth-of-type(3)::after {
   width: 150px;
+}
+.stage.active .content .chart .box ul li:nth-of-type(3)::before {
+  content: "15,000";
 }
 .stage.active .content .chart .box ul li:nth-of-type(4) {
   -webkit-transform: rotate(-60deg) translateZ(240px);
@@ -343,11 +349,13 @@ body {
           transform: rotate(-60deg) translateZ(240px);
 }
 .stage.active .content .chart .box ul li:nth-of-type(4)::before {
-  content: "24,000";
   width: 240px;
 }
 .stage.active .content .chart .box ul li:nth-of-type(4)::after {
   width: 240px;
+}
+.stage.active .content .chart .box ul li:nth-of-type(4)::before {
+  content: "24,000";
 }
 .stage.active .content .chart .box ul li:nth-of-type(5) {
   -webkit-transform: rotate(-60deg) translateZ(70px);
@@ -355,11 +363,13 @@ body {
           transform: rotate(-60deg) translateZ(70px);
 }
 .stage.active .content .chart .box ul li:nth-of-type(5)::before {
-  content: "7,000";
   width: 70px;
 }
 .stage.active .content .chart .box ul li:nth-of-type(5)::after {
   width: 70px;
+}
+.stage.active .content .chart .box ul li:nth-of-type(5)::before {
+  content: "7,000";
 }
 .stage.active .content .chart .box ul li:nth-of-type(6) {
   -webkit-transform: rotate(-60deg) translateZ(70px);
@@ -367,11 +377,13 @@ body {
           transform: rotate(-60deg) translateZ(70px);
 }
 .stage.active .content .chart .box ul li:nth-of-type(6)::before {
-  content: "7,000";
   width: 70px;
 }
 .stage.active .content .chart .box ul li:nth-of-type(6)::after {
   width: 70px;
+}
+.stage.active .content .chart .box ul li:nth-of-type(6)::before {
+  content: "7,000";
 }
 .stage.active .content .chart .box ul li:nth-of-type(7) {
   -webkit-transform: rotate(-60deg) translateZ(100px);
@@ -379,11 +391,13 @@ body {
           transform: rotate(-60deg) translateZ(100px);
 }
 .stage.active .content .chart .box ul li:nth-of-type(7)::before {
-  content: "10,000";
   width: 100px;
 }
 .stage.active .content .chart .box ul li:nth-of-type(7)::after {
   width: 100px;
+}
+.stage.active .content .chart .box ul li:nth-of-type(7)::before {
+  content: "10,000";
 }
 .stage.active .content .chart .box p {
   -webkit-transform: translateZ(10px);

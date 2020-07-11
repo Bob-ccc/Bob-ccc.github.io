@@ -148,76 +148,128 @@ body {
                             &::before {
                                 color: black;
                             }
-                            &:nth-of-type(1) {
-                                transform: rotate(-60deg) translateZ(200px);
+
+                            .mytype(@n){
+                                transform: rotate(-60deg) translateZ(@n);
                                 &::before {
-                                    content: "20,000";
-                                    width: 200px;
+                                    width: @n;
                                 }
                                 &::after {
-                                    width: 200px;
+                                    width: @n;
+                                }
+                            }
+                            &:nth-of-type(1) {
+                                .mytype(200px);
+                                &::before {
+                                    content: "20,000";
                                 }
                             }
                             &:nth-of-type(2) {
-                                transform: rotate(-60deg) translateZ(100px);
+                                .mytype(100px);
                                 &::before {
                                     content: "10,000";
-                                    width: 100px;
-                                }
-                                &::after {
-                                    width: 100px;
                                 }
                             }
                             &:nth-of-type(3) {
-                                transform: rotate(-60deg) translateZ(150px);
+                                .mytype(150px);
                                 &::before {
                                     content: "15,000";
-                                    width: 150px;
-                                }
-                                &::after {
-                                    width: 150px;
                                 }
                             }
                             &:nth-of-type(4) {
-                                transform: rotate(-60deg) translateZ(240px);
+                                .mytype(240px);
                                 &::before {
                                     content: "24,000";
-                                    width: 240px;
-                                }
-                                &::after {
-                                    width: 240px;
                                 }
                             }
                             &:nth-of-type(5) {
-                                transform: rotate(-60deg) translateZ(70px);
+                                .mytype(70px);
                                 &::before {
                                     content: "7,000";
-                                    width: 70px;
-                                }
-                                &::after {
-                                    width: 70px;
                                 }
                             }
                             &:nth-of-type(6) {
-                                transform: rotate(-60deg) translateZ(70px);
+                                .mytype(70px);
                                 &::before {
                                     content: "7,000";
-                                    width: 70px;
-                                }
-                                &::after {
-                                    width: 70px;
                                 }
                             }
                             &:nth-of-type(7) {
-                                transform: rotate(-60deg) translateZ(100px);
+                                .mytype(100px);
                                 &::before {
                                     content: "10,000";
-                                    width: 100px;
-                                }
-                                &::after {
-                                    width: 100px;
                                 }
                             }
+                            // &:nth-of-type(1) {
+                            //     transform: rotate(-60deg) translateZ(200px);
+                            //     &::before {
+                            //         content: "20,000";
+                            //         width: 200px;
+                            //     }
+                            //     &::after {
+                            //         width: 200px;
+                            //     }
+                            // }
+                            // &:nth-of-type(2) {
+                            //     transform: rotate(-60deg) translateZ(100px);
+                            //     &::before {
+                            //         content: "10,000";
+                            //         width: 100px;
+                            //     }
+                            //     &::after {
+                            //         width: 100px;
+                            //     }
+                            // }
+                            // &:nth-of-type(3) {
+                            //     transform: rotate(-60deg) translateZ(150px);
+                            //     &::before {
+                            //         content: "15,000";
+                            //         width: 150px;
+                            //     }
+                            //     &::after {
+                            //         width: 150px;
+                            //     }
+                            // }
+                            // &:nth-of-type(4) {
+                            //     transform: rotate(-60deg) translateZ(240px);
+                            //     &::before {
+                            //         content: "24,000";
+                            //         width: 240px;
+                            //     }
+                            //     &::after {
+                            //         width: 240px;
+                            //     }
+                            // }
+                            // &:nth-of-type(5) {
+                            //     transform: rotate(-60deg) translateZ(70px);
+                            //     &::before {
+                            //         content: "7,000";
+                            //         width: 70px;
+                            //     }
+                            //     &::after {
+                            //         width: 70px;
+                            //     }
+                            // }
+                            // &:nth-of-type(6) {
+                            //     transform: rotate(-60deg) translateZ(70px);
+                            //     &::before {
+                            //         content: "7,000";
+                            //         width: 70px;
+                            //     }
+                            //     &::after {
+                            //         width: 70px;
+                            //     }
+                            // }
+                            // &:nth-of-type(7) {
+                            //     transform: rotate(-60deg) translateZ(100px);
+                            //     &::before {
+                            //         content: "10,000";
+                            //         width: 100px;
+                            //     }
+                            //     &::after {
+                            //         width: 100px;
+                            //     }
+                            // }
                         }
                     }
                     p {
