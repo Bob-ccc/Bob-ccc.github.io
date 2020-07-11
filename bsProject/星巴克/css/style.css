@@ -72,8 +72,12 @@ h6 {
 .button {
   padding: 2px 12px;
   border: 1px solid #00A862;
-  border-radius: 48px;
-  box-sizing: border-box;
+  -webkit-border-radius: 48px;
+     -moz-border-radius: 48px;
+          border-radius: 48px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   color: #00A862;
   display: inline-block;
   font-weight: 500;
@@ -86,7 +90,9 @@ h6 {
   height: 100%;
   width: 30%;
   position: fixed;
-  box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.12);
+     -moz-box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.12);
 }
 .b-nav .header {
   overflow: hidden;
@@ -216,15 +222,26 @@ h6 {
   padding: 12px;
 }
 .content .promotion a img {
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -moz-transition: all 0.2s;
   transition: all 0.2s;
 }
 .content .promotion a:hover img {
-  box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.12);
-  margin-top: -4px;
+  -webkit-box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.12);
+     -moz-box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.12);
+  -webkit-transform: translateY(-4px);
+     -moz-transform: translateY(-4px);
+      -ms-transform: translateY(-4px);
+       -o-transform: translateY(-4px);
+          transform: translateY(-4px);
 }
 .content .program {
   padding: 36px 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
   max-width: 768px;
@@ -253,14 +270,16 @@ h6 {
 }
 .content .tmall {
   background-color: #f7f7f7;
-  padding-top: 36px ;
+  padding-top: 36px;
   text-align: center;
 }
 .content .tmall .grid {
   position: relative;
   overflow: hidden;
   padding-top: 48px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
   max-width: 768px;
@@ -271,15 +290,30 @@ h6 {
   margin-bottom: 36px;
 }
 .content .tmall .grid li a:hover {
-  box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.12);
-  margin-top: -4px;
+  -webkit-box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.12);
+     -moz-box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.12);
+  -webkit-transform: translateY(-4px);
+     -moz-transform: translateY(-4px);
+      -ms-transform: translateY(-4px);
+       -o-transform: translateY(-4px);
+          transform: translateY(-4px);
 }
 .content .tmall .grid li a {
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -moz-transition: all 0.2s;
   transition: all 0.2s;
-  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
-  box-sizing: border-box;
+  -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
+     -moz-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   background: #fff;
-  border-radius: 2px;
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+          border-radius: 2px;
   display: inline-block;
   position: relative;
   padding: 0 6px;
@@ -341,17 +375,32 @@ h6 {
 }
 .content .coffeehouse .scroll .wrapper .rect .preview {
   height: 168px;
-  background-size: cover ;
+  -moz-background-size: cover;
+       background-size: cover;
 }
 .content .coffeehouse .scroll .wrapper .card {
   padding: 18px;
   margin-top: 12px;
   margin-bottom: 12px;
   background: #FFF;
-  border-radius: 2px;
-  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
-  overflow: hidden;
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+          border-radius: 2px;
+  -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
+     -moz-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
   position: relative;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.content .coffeehouse .scroll .wrapper .card:hover {
+  -webkit-transform: translateY(-5px);
+     -moz-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+       -o-transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 .content .coffeehouse .scroll .wrapper .card .preview {
   margin-top: -18px;
@@ -369,9 +418,15 @@ h6 {
   top: 6px;
 }
 .content .coffeehouse .scroll-arrow {
-  border-radius: 50%;
-  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
-  box-sizing: border-box;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+  -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
+     -moz-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   background: white;
   cursor: pointer;
   height: 28.8px;
@@ -394,7 +449,9 @@ h6 {
   height: 55px;
   position: fixed;
   bottom: 0;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+     -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
   background-color: white;
   padding: 0 6px;
   width: 100%;

@@ -1,0 +1,997 @@
+.container h1 {
+  text-align: center;
+  line-height: 4em;
+}
+.container .row > div {
+  text-align: center;
+}
+.container .row > div .btn {
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+  overflow: hidden;
+  text-align: center;
+  min-width: 50px;
+  margin: 15px auto;
+  height: 30px;
+  font-size: 12px;
+  font-weight: bolder;
+  background-color: #e1e1e1;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  position: relative;
+  border: 0;
+}
+.container .row > div .btn.btn1:hover {
+  -webkit-transform: scale(0.8);
+     -moz-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+       -o-transform: scale(0.8);
+          transform: scale(0.8);
+}
+.container .row > div .btn.btn2:hover {
+  -webkit-transform: scale(1.2);
+     -moz-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+       -o-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.container .row > div .btn.btn3:hover {
+  background-color: #2098D1;
+  color: white;
+}
+.container .row > div .btn .mask {
+  content: "";
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  -moz-transition: inherit;
+  transition: inherit;
+  background-color: #2098D1;
+  position: absolute;
+  -webkit-transform-origin: left;
+     -moz-transform-origin: left;
+      -ms-transform-origin: left;
+       -o-transform-origin: left;
+          transform-origin: left;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+.container .row > div .btn.btn4 {
+  z-index: 0;
+}
+.container .row > div .btn.btn4::before {
+  content: "";
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  -moz-transition: inherit;
+  transition: inherit;
+  background-color: #2098D1;
+  position: absolute;
+  -webkit-transform-origin: left;
+     -moz-transform-origin: left;
+      -ms-transform-origin: left;
+       -o-transform-origin: left;
+          transform-origin: left;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  -webkit-transform: scaleX(0);
+     -moz-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+       -o-transform: scaleX(0);
+          transform: scaleX(0);
+}
+.container .row > div .btn.btn4 span {
+  z-index: 1;
+}
+.container .row > div .btn.btn4:hover {
+  color: white;
+}
+.container .row > div .btn.btn4:hover::before {
+  -webkit-transform: scaleX(1);
+     -moz-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+       -o-transform: scaleX(1);
+          transform: scaleX(1);
+}
+.container .row > div .btn.btn5 {
+  z-index: 0;
+}
+.container .row > div .btn.btn5::before {
+  content: "";
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  -moz-transition: inherit;
+  transition: inherit;
+  background-color: #2098D1;
+  position: absolute;
+  -webkit-transform-origin: left;
+     -moz-transform-origin: left;
+      -ms-transform-origin: left;
+       -o-transform-origin: left;
+          transform-origin: left;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  -webkit-transform: scaleX(0);
+     -moz-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+       -o-transform: scaleX(0);
+          transform: scaleX(0);
+}
+.container .row > div .btn.btn5 span {
+  z-index: 1;
+}
+.container .row > div .btn.btn5:hover {
+  color: white;
+}
+.container .row > div .btn.btn5:hover::before {
+  -webkit-transform: scaleX(1);
+     -moz-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+       -o-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+     -moz-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+       -o-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+          transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+.container .row > div .btn.btn6 {
+  z-index: 0;
+  background-color: #2098D1;
+}
+.container .row > div .btn.btn6::before {
+  content: "";
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  -moz-transition: inherit;
+  transition: inherit;
+  background-color: #2098D1;
+  position: absolute;
+  -webkit-transform-origin: left;
+     -moz-transform-origin: left;
+      -ms-transform-origin: left;
+       -o-transform-origin: left;
+          transform-origin: left;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #e1e1e1;
+  -webkit-transform-origin: center center;
+     -moz-transform-origin: center center;
+      -ms-transform-origin: center center;
+       -o-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: scale(1);
+     -moz-transform: scale(1);
+      -ms-transform: scale(1);
+       -o-transform: scale(1);
+          transform: scale(1);
+}
+.container .row > div .btn.btn6 span {
+  z-index: 1;
+}
+.container .row > div .btn.btn6:hover {
+  color: white;
+}
+.container .row > div .btn.btn6:hover::before {
+  -webkit-transform: scale(0);
+     -moz-transform: scale(0);
+      -ms-transform: scale(0);
+       -o-transform: scale(0);
+          transform: scale(0);
+}
+.container .row > div .btn.btn7 {
+  z-index: 0;
+}
+.container .row > div .btn.btn7::before {
+  content: "";
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  -moz-transition: inherit;
+  transition: inherit;
+  background-color: #2098D1;
+  position: absolute;
+  -webkit-transform-origin: left;
+     -moz-transform-origin: left;
+      -ms-transform-origin: left;
+       -o-transform-origin: left;
+          transform-origin: left;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  -webkit-transform-origin: center center;
+     -moz-transform-origin: center center;
+      -ms-transform-origin: center center;
+       -o-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: scale(0);
+     -moz-transform: scale(0);
+      -ms-transform: scale(0);
+       -o-transform: scale(0);
+          transform: scale(0);
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+}
+.container .row > div .btn.btn7 span {
+  z-index: 1;
+}
+.container .row > div .btn.btn7:hover {
+  color: white;
+}
+.container .row > div .btn.btn7:hover::before {
+  -webkit-transform: scale(2);
+     -moz-transform: scale(2);
+      -ms-transform: scale(2);
+       -o-transform: scale(2);
+          transform: scale(2);
+}
+.container .row > div .btn.btn8 {
+  z-index: 0;
+  background-color: #2098D1;
+}
+.container .row > div .btn.btn8::before {
+  content: "";
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  -moz-transition: inherit;
+  transition: inherit;
+  background-color: #2098D1;
+  position: absolute;
+  -webkit-transform-origin: left;
+     -moz-transform-origin: left;
+      -ms-transform-origin: left;
+       -o-transform-origin: left;
+          transform-origin: left;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #e1e1e1;
+  -webkit-transform-origin: center center;
+     -moz-transform-origin: center center;
+      -ms-transform-origin: center center;
+       -o-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: scaleX(1);
+     -moz-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+       -o-transform: scaleX(1);
+          transform: scaleX(1);
+}
+.container .row > div .btn.btn8 span {
+  z-index: 1;
+}
+.container .row > div .btn.btn8:hover {
+  color: white;
+}
+.container .row > div .btn.btn8:hover::before {
+  -webkit-transform: scaleX(0);
+     -moz-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+       -o-transform: scaleX(0);
+          transform: scaleX(0);
+}
+.container .row > div .btn.btn9 {
+  z-index: 0;
+}
+.container .row > div .btn.btn9::before {
+  content: "";
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  -moz-transition: inherit;
+  transition: inherit;
+  background-color: #2098D1;
+  position: absolute;
+  -webkit-transform-origin: left;
+     -moz-transform-origin: left;
+      -ms-transform-origin: left;
+       -o-transform-origin: left;
+          transform-origin: left;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #e1e1e1;
+  width: -webkit-calc(100% - 10px);
+  width: -moz-calc(100% - 10px);
+  width: calc(100% - 10px);
+  height: -webkit-calc(100% - 10px);
+  height: -moz-calc(100% - 10px);
+  height: calc(100% - 10px);
+  -webkit-transform: translateX(5px) translateY(5px);
+     -moz-transform: translateX(5px) translateY(5px);
+      -ms-transform: translateX(5px) translateY(5px);
+       -o-transform: translateX(5px) translateY(5px);
+          transform: translateX(5px) translateY(5px);
+}
+.container .row > div .btn.btn9 span {
+  z-index: 1;
+}
+.container .row > div .btn.btn9:hover::before {
+  background-color: white;
+}
+.container .row > div .btn.btn10 {
+  overflow: initial;
+}
+.container .row > div .btn.btn10::before {
+  content: "";
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  -moz-transition: inherit;
+  transition: inherit;
+  background-color: #2098D1;
+  position: absolute;
+  -webkit-transform-origin: left;
+     -moz-transform-origin: left;
+      -ms-transform-origin: left;
+       -o-transform-origin: left;
+          transform-origin: left;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-color: white;
+  border: 5px solid #e1e1e1;
+  -webkit-transform-origin: center center;
+     -moz-transform-origin: center center;
+      -ms-transform-origin: center center;
+       -o-transform-origin: center center;
+          transform-origin: center center;
+}
+.container .row > div .btn.btn10 span {
+  z-index: 1;
+}
+.container .row > div .btn.btn10:hover::before {
+  -webkit-animation: btn10 0.5s linear;
+     -moz-animation: btn10 0.5s linear;
+       -o-animation: btn10 0.5s linear;
+          animation: btn10 0.5s linear;
+}
+.container .row > div .btn.btn11 {
+  overflow: initial;
+}
+.container .row > div .btn.btn11::before {
+  content: "";
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  -moz-transition: inherit;
+  transition: inherit;
+  background-color: #2098D1;
+  position: absolute;
+  -webkit-transform-origin: left;
+     -moz-transform-origin: left;
+      -ms-transform-origin: left;
+       -o-transform-origin: left;
+          transform-origin: left;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-color: white;
+  border: 3px solid #e1e1e1;
+  -webkit-transform-origin: center center;
+     -moz-transform-origin: center center;
+      -ms-transform-origin: center center;
+       -o-transform-origin: center center;
+          transform-origin: center center;
+}
+.container .row > div .btn.btn11 span {
+  z-index: 1;
+}
+.container .row > div .btn.btn11:hover::before {
+  -webkit-animation: btn11 0.5s linear;
+     -moz-animation: btn11 0.5s linear;
+       -o-animation: btn11 0.5s linear;
+          animation: btn11 0.5s linear;
+}
+.container .row > div .btn.btn12 {
+  overflow: initial;
+}
+.container .row > div .btn.btn12::before {
+  content: "";
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  -moz-transition: inherit;
+  transition: inherit;
+  background-color: #2098D1;
+  position: absolute;
+  -webkit-transform-origin: left;
+     -moz-transform-origin: left;
+      -ms-transform-origin: left;
+       -o-transform-origin: left;
+          transform-origin: left;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-color: white;
+  border: 3px solid #e1e1e1;
+  -webkit-transform-origin: center center;
+     -moz-transform-origin: center center;
+      -ms-transform-origin: center center;
+       -o-transform-origin: center center;
+          transform-origin: center center;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  -webkit-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  -moz-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+.container .row > div .btn.btn12 span {
+  z-index: 1;
+}
+.container .row > div .btn.btn12:hover::before {
+  opacity: 1;
+  top: -6px;
+  right: -6px;
+  bottom: -6px;
+  left: -6px;
+}
+.container .row > div .btn.btn13 {
+  z-index: 0;
+}
+.container .row > div .btn.btn13::before {
+  content: "";
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  -moz-transition: inherit;
+  transition: inherit;
+  background-color: #2098D1;
+  position: absolute;
+  -webkit-transform-origin: left;
+     -moz-transform-origin: left;
+      -ms-transform-origin: left;
+       -o-transform-origin: left;
+          transform-origin: left;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  height: 2px;
+  -webkit-transform: scaleX(0) translateY(28px);
+     -moz-transform: scaleX(0) translateY(28px);
+      -ms-transform: scaleX(0) translateY(28px);
+       -o-transform: scaleX(0) translateY(28px);
+          transform: scaleX(0) translateY(28px);
+}
+.container .row > div .btn.btn13 span {
+  z-index: 1;
+}
+.container .row > div .btn.btn13:hover::before {
+  -webkit-transform: scaleX(1) translateY(28px);
+     -moz-transform: scaleX(1) translateY(28px);
+      -ms-transform: scaleX(1) translateY(28px);
+       -o-transform: scaleX(1) translateY(28px);
+          transform: scaleX(1) translateY(28px);
+}
+.container .row > div .btn.btn14 {
+  z-index: 0;
+}
+.container .row > div .btn.btn14::before {
+  content: "";
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  -moz-transition: inherit;
+  transition: inherit;
+  background-color: #2098D1;
+  position: absolute;
+  -webkit-transform-origin: left;
+     -moz-transform-origin: left;
+      -ms-transform-origin: left;
+       -o-transform-origin: left;
+          transform-origin: left;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  height: 2px;
+  -webkit-transform-origin: 50%;
+     -moz-transform-origin: 50%;
+      -ms-transform-origin: 50%;
+       -o-transform-origin: 50%;
+          transform-origin: 50%;
+  -webkit-transform: scaleX(0) translateY(28px);
+     -moz-transform: scaleX(0) translateY(28px);
+      -ms-transform: scaleX(0) translateY(28px);
+       -o-transform: scaleX(0) translateY(28px);
+          transform: scaleX(0) translateY(28px);
+}
+.container .row > div .btn.btn14 span {
+  z-index: 1;
+}
+.container .row > div .btn.btn14:hover::before {
+  -webkit-transform: scaleX(1) translateY(28px);
+     -moz-transform: scaleX(1) translateY(28px);
+      -ms-transform: scaleX(1) translateY(28px);
+       -o-transform: scaleX(1) translateY(28px);
+          transform: scaleX(1) translateY(28px);
+}
+.container .row > div .btn.btn15 {
+  z-index: 0;
+}
+.container .row > div .btn.btn15::before {
+  content: "";
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  -moz-transition: inherit;
+  transition: inherit;
+  background-color: #2098D1;
+  position: absolute;
+  -webkit-transform-origin: left;
+     -moz-transform-origin: left;
+      -ms-transform-origin: left;
+       -o-transform-origin: left;
+          transform-origin: left;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  height: 2px;
+  -webkit-transform: translateY(31px);
+     -moz-transform: translateY(31px);
+      -ms-transform: translateY(31px);
+       -o-transform: translateY(31px);
+          transform: translateY(31px);
+}
+.container .row > div .btn.btn15 span {
+  z-index: 1;
+}
+.container .row > div .btn.btn15:hover::before {
+  -webkit-transform: translateY(28px);
+     -moz-transform: translateY(28px);
+      -ms-transform: translateY(28px);
+       -o-transform: translateY(28px);
+          transform: translateY(28px);
+}
+.container .row > div .btn.btn16:hover {
+  -webkit-box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+}
+.container .row > div .btn.btn17:hover {
+  -webkit-transform: scale(1.1);
+     -moz-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+       -o-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+}
+.container .row > div .btn.btn18 {
+  overflow: initial;
+}
+.container .row > div .btn.btn18::before {
+  content: "";
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  -moz-transition: inherit;
+  transition: inherit;
+  background-color: #2098D1;
+  position: absolute;
+  -webkit-transform-origin: left;
+     -moz-transform-origin: left;
+      -ms-transform-origin: left;
+       -o-transform-origin: left;
+          transform-origin: left;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  top: 100%;
+  left: 5%;
+  width: 90%;
+  -webkit-transform: translateY(5px);
+     -moz-transform: translateY(5px);
+      -ms-transform: translateY(5px);
+       -o-transform: translateY(5px);
+          transform: translateY(5px);
+  background-color: transparent;
+  opacity: 0;
+}
+.container .row > div .btn.btn18:hover {
+  -webkit-transform: translateY(-5px);
+     -moz-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+       -o-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+.container .row > div .btn.btn18:hover::before {
+  height: 7px;
+  opacity: 1;
+  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  background: -moz- oldradial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  background: -o-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+}
+.container .row > div .btn.btn19:hover {
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+     -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+.container .row > div .btn.btn20 {
+  overflow: initial;
+}
+.container .row > div .btn.btn20::before {
+  content: "";
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  -moz-transition: inherit;
+  transition: inherit;
+  background-color: #2098D1;
+  position: absolute;
+  -webkit-transform-origin: left;
+     -moz-transform-origin: left;
+      -ms-transform-origin: left;
+       -o-transform-origin: left;
+          transform-origin: left;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  bottom: 100%;
+  width: 100%;
+  height: 5px;
+  -webkit-transform: translateY(-5px);
+     -moz-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+       -o-transform: translateY(-5px);
+          transform: translateY(-5px);
+  background-color: transparent;
+  opacity: 0;
+}
+.container .row > div .btn.btn20::after {
+  content: "";
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  -moz-transition: inherit;
+  transition: inherit;
+  background-color: #2098D1;
+  position: absolute;
+  -webkit-transform-origin: left;
+     -moz-transform-origin: left;
+      -ms-transform-origin: left;
+       -o-transform-origin: left;
+          transform-origin: left;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  top: 100%;
+  width: 100%;
+  height: 5px;
+  background-color: transparent;
+  opacity: 0;
+}
+.container .row > div .btn.btn20:hover::before {
+  background: -webkit-radial-gradient(50% 150%, ellipse, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+  background: -moz- oldradial-gradient(50% 150%, ellipse, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+  background: -o-radial-gradient(50% 150%, ellipse, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+  background: radial-gradient(ellipse at 50% 150%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+  opacity: 1;
+}
+.container .row > div .btn.btn20:hover::after {
+  background: -webkit-radial-gradient(50% -50%, ellipse, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+  background: -moz- oldradial-gradient(50% -50%, ellipse, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+  background: -o-radial-gradient(50% -50%, ellipse, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+  background: radial-gradient(ellipse at 50% -50%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+  opacity: 1;
+}
+.container .row > div .btn.btn21:hover {
+  -webkit-transform: translateX(-1px) translateY(-1px);
+     -moz-transform: translateX(-1px) translateY(-1px);
+      -ms-transform: translateX(-1px) translateY(-1px);
+       -o-transform: translateX(-1px) translateY(-1px);
+          transform: translateX(-1px) translateY(-1px);
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+     -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+.container .row > div .btn.btn22 {
+  overflow: initial;
+}
+.container .row > div .btn.btn22::before {
+  content: "";
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  -moz-transition: inherit;
+  transition: inherit;
+  background-color: #2098D1;
+  position: absolute;
+  -webkit-transform-origin: left;
+     -moz-transform-origin: left;
+      -ms-transform-origin: left;
+       -o-transform-origin: left;
+          transform-origin: left;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  top: 8px;
+  left: -7px;
+  background-color: transparent;
+  border: 7px solid transparent;
+  border-right: 7px solid #e1e1e1;
+}
+.container .row > div .btn.btn22:hover {
+  -webkit-transform: translateX(7px);
+     -moz-transform: translateX(7px);
+      -ms-transform: translateX(7px);
+       -o-transform: translateX(7px);
+          transform: translateX(7px);
+}
+.container .row > div .btn.btn22:hover::before {
+  -webkit-transform: translateX(-7px);
+     -moz-transform: translateX(-7px);
+      -ms-transform: translateX(-7px);
+       -o-transform: translateX(-7px);
+          transform: translateX(-7px);
+}
+.container .row > div .btn.btn23 {
+  z-index: 0;
+}
+.container .row > div .btn.btn23::before {
+  content: "";
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  -moz-transition: inherit;
+  transition: inherit;
+  background-color: #2098D1;
+  position: absolute;
+  -webkit-transform-origin: left;
+     -moz-transform-origin: left;
+      -ms-transform-origin: left;
+       -o-transform-origin: left;
+          transform-origin: left;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  left: 100%;
+  top: 100%;
+  -webkit-transform-origin: right;
+     -moz-transform-origin: right;
+      -ms-transform-origin: right;
+       -o-transform-origin: right;
+          transform-origin: right;
+  background: -webkit-linear-gradient(135deg, white 45%, #aaa 50%, #ccc 56%, white 80%);
+  background: -moz- oldlinear-gradient(135deg, white 45%, #aaa 50%, #ccc 56%, white 80%);
+  background: -o-linear-gradient(135deg, white 45%, #aaa 50%, #ccc 56%, white 80%);
+  background: linear-gradient(315deg, white 45%, #aaa 50%, #ccc 56%, white 80%);
+  -webkit-box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.4);
+     -moz-box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.4);
+          box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+.container .row > div .btn.btn23:hover::before {
+  width: 15px;
+  height: 15px;
+  -webkit-transform: translateX(-15px) translateY(-15px);
+     -moz-transform: translateX(-15px) translateY(-15px);
+      -ms-transform: translateX(-15px) translateY(-15px);
+       -o-transform: translateX(-15px) translateY(-15px);
+          transform: translateX(-15px) translateY(-15px);
+}
+.container .row > div .btn.btn24 {
+  overflow: initial;
+  -webkit-transform-style: preserve-3d;
+     -moz-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  z-index: 0;
+}
+.container .row > div .btn.btn24 span {
+  display: block;
+  -webkit-transform-style: preserve-3d;
+     -moz-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: translateZ(5px);
+     -moz-transform: translateZ(5px);
+          transform: translateZ(5px);
+  z-index: 1;
+}
+.container .row > div .btn.btn24::before {
+  content: "";
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  -moz-transition: inherit;
+  transition: inherit;
+  background-color: #2098D1;
+  position: absolute;
+  -webkit-transform-origin: left;
+     -moz-transform-origin: left;
+      -ms-transform-origin: left;
+       -o-transform-origin: left;
+          transform-origin: left;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #ccc;
+  content: "翻转成功";
+  -webkit-transform-origin: 50% 50%;
+     -moz-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+       -o-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform: translateZ(-1px) rotateX(180deg);
+     -moz-transform: translateZ(-1px) rotateX(180deg);
+          transform: translateZ(-1px) rotateX(180deg);
+  line-height: 30px;
+  z-index: -1;
+  opacity: 0;
+}
+.container .row > div .btn.btn24.active {
+  -webkit-transform: rotateX(180deg);
+     -moz-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+.container .row > div .btn.btn24.active::before {
+  opacity: 1;
+}
+@-webkit-keyframes btn10 {
+  0% {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    opacity: 0;
+  }
+}
+@-moz-keyframes btn10 {
+  0% {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    opacity: 0;
+  }
+}
+@-o-keyframes btn10 {
+  0% {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    opacity: 0;
+  }
+}
+@keyframes btn10 {
+  0% {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes btn11 {
+  0% {
+    top: -7px;
+    right: -7px;
+    bottom: -7px;
+    left: -7px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+  }
+}
+@-moz-keyframes btn11 {
+  0% {
+    top: -7px;
+    right: -7px;
+    bottom: -7px;
+    left: -7px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+  }
+}
+@-o-keyframes btn11 {
+  0% {
+    top: -7px;
+    right: -7px;
+    bottom: -7px;
+    left: -7px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+  }
+}
+@keyframes btn11 {
+  0% {
+    top: -7px;
+    right: -7px;
+    bottom: -7px;
+    left: -7px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=./style.css.map */

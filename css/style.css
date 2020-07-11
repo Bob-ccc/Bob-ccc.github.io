@@ -25,7 +25,11 @@ p {
   transition: all 0.5s;
 }
 .content .box img:hover {
-  margin-top: -10px;
+  -webkit-transform: translateY(-10px);
+     -moz-transform: translateY(-10px);
+      -ms-transform: translateY(-10px);
+       -o-transform: translateY(-10px);
+          transform: translateY(-10px);
   -webkit-box-shadow: 5px 5px 10px #888888;
      -moz-box-shadow: 5px 5px 10px #888888;
           box-shadow: 5px 5px 10px #888888;
