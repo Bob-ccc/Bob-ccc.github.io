@@ -61,9 +61,6 @@ p {
   max-width: 100%;
   width: auto;
 }
-.content .js .clock {
-  border-bottom: 1px solid gray;
-}
 .content .js .row {
   padding: 20px;
 }
