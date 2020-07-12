@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .contr{
+            margin-left: 300px;
+            position: absolute;
+            padding: 10px;
+        }
+    </style>
 </head>
-<body>
-    <script>
 
+<body>
+    <div class="contr">
+        <span>asdw键位控制方向</span>
+        <button class="reset">重新开始</button>
+
+    </div>
+    <script>
+        document.querySelector(".reset").onclick = function(){
+        location.reload()
+    }
         // 封装地图类
-        function Map(width,height){
-            
+        function Map(width, height) {
             // 地图宽度
             this.width = width;
             // 地图高度
@@ -26,20 +41,20 @@
         }
 
         // 显示地图的方法
-        Map.prototype.show = function(){
+        Map.prototype.show = function () {
             //  创建div
             this._map = document.createElement("div");
 
             // 宽
-            this._map.style.width = this.width+"px";
+            this._map.style.width = this.width + "px";
             // 高
-            this._map.style.height = this.height+"px";
+            this._map.style.height = this.height + "px";
             // 背景
             this._map.style.backgroundColor = this.backgroundColor;
             // 边框
             this._map.style.border = this.border;
             // 圆角
-            this._map.style.borderRadius = 3+"px";
+            this._map.style.borderRadius = 3 + "px";
             // 定位方式
             this._map.style.position = this.position;
             // 位置
@@ -51,10 +66,10 @@
             document.body.appendChild(this._map);
 
         }
-//----------------------------------------------------------------------------------------
+        //----------------------------------------------------------------------------------------
 
         // 封装食物类
-        function Food(){
+        function Food() {
 
             // 食物的宽度
             this.width = 20;
@@ -73,11 +88,11 @@
             // 保存食物DOM对象
             this._food = null;
         }
-        
+
         // 显示食物的方法
-        Food.prototype.show = function(){
+        Food.prototype.show = function () {
             // 判断是否存在食物
-            if(this._food == null){
+            if (this._food == null) {
 
                 // 创建食物div标签
                 this._food = document.createElement("div");
@@ -102,37 +117,37 @@
 
             // 食物出现的位置
             this._food.style.left = this.x * this.width + "px";
-            this._food.style.top= this.y * this.height + "px";
-            
+            this._food.style.top = this.y * this.height + "px";
+
         }
 
         // 食物随机出现
-        Food.prototype.randomPos = function(){
+        Food.prototype.randomPos = function () {
 
             // 随机坐标X 最多780,最少0
-            var maxX = map.width/this.width - 1;
+            var maxX = map.width / this.width - 1;
             var minX = 0;
 
             // 随机坐标y 最多580,最少0
-            var maxY = map.height/this.height - 1;
+            var maxY = map.height / this.height - 1;
             var minY = 0;
 
             // 给x,y赋值随机值
-            this.x = Math.floor(Math.random()*(maxX-minX+1)+minX);
-            this.y = Math.floor(Math.random()*(maxY-minY+1)+minY);
+            this.x = Math.floor(Math.random() * (maxX - minX + 1) + minX);
+            this.y = Math.floor(Math.random() * (maxY - minY + 1) + minY);
 
         }
-//----------------------------------------------------------------------------------------
-        
+        //----------------------------------------------------------------------------------------
+
         // 封装蛇类
-        function Snake(){
+        function Snake() {
 
             // 蛇身体数据，当吃完食物的时候，就要加一个，初始为4个小点为一个蛇，
-            this.body = [     
-                [2,1,"black",null],  // 蛇节，第一个点  
-                [1,1,"red",null],  // 蛇节，二
-                [1,0,"red",null],  // 蛇节，三
-                [0,0,"red",null]  // 蛇节，四
+            this.body = [
+                [2, 1, "black", null],  // 蛇节，第一个点  
+                [1, 1, "red", null],  // 蛇节，二
+                [1, 0, "red", null],  // 蛇节，三
+                [0, 0, "red", null]  // 蛇节，四
             ];
 
             // 设置蛇节的宽
@@ -143,16 +158,16 @@
             this.position = "absolute";
             // 蛇运动的方向，默认向右
             this.direction = 'right';
-            
+
         }
 
         // 蛇类显示方法
-        Snake.prototype.show = function(){
+        Snake.prototype.show = function () {
 
             // 显示蛇的方法
-            this.body.forEach(function(item){
+            this.body.forEach(function (item) {
 
-                if(item[3] == null){
+                if (item[3] == null) {
                     // 创建蛇节
                     item[3] = document.createElement("div");
                     // 蛇节属性
@@ -171,42 +186,42 @@
                 }
 
                 // 设置坐标
-                item[3].style.left = item[0]*snake.width + "px";
-                item[3].style.top = item[1]*snake.height + "px";
+                item[3].style.left = item[0] * snake.width + "px";
+                item[3].style.top = item[1] * snake.height + "px";
             });
-            
+
         }
 
         // 蛇运动方法
-        Snake.prototype.move = function(){
-            
+        Snake.prototype.move = function () {
 
-            for(var i = this.body.length - 1; i > 0; i--){
+
+            for (var i = this.body.length - 1; i > 0; i--) {
                 // 延用上一个蛇节的x坐标
-                this.body[i][0] = this.body[i-1][0];
+                this.body[i][0] = this.body[i - 1][0];
                 // 延用上一个蛇节的y坐标
-                this.body[i][1] = this.body[i-1][1];
+                this.body[i][1] = this.body[i - 1][1];
             }
 
             // 处理蛇头
-            switch(this.direction){
+            switch (this.direction) {
                 case "right":
                     this.body[0][0]++;
-                break;
+                    break;
                 case "left":
                     this.body[0][0]--;
-                break;
+                    break;
                 case "down":
                     this.body[0][1]++;
-                break;
+                    break;
                 case "up":
                     this.body[0][1]--;
-                break;
+                    break;
             }
 
             // 重新在地图上渲染蛇
             this.show();
-             // 调用判断出界方法
+            // 调用判断出界方法
             this.border();
             // 调用检测是否吃到身体的方法
             this.suicade();
@@ -215,8 +230,8 @@
         }
 
         // 吃食物方法
-        Snake.prototype.eat = function(){
-            if(this.body[0][0] == food.x  && this.body[0][1] == food.y ){
+        Snake.prototype.eat = function () {
+            if (this.body[0][0] == food.x && this.body[0][1] == food.y) {
                 // 吃完食物，食物重新显示
                 food.show();
 
@@ -226,41 +241,41 @@
                 scorce.show();
 
                 // 蛇变长
-                this.body.push([1,1,"green",null])
+                this.body.push([1, 1, "green", null])
 
                 // 改变速度
                 speed = speed * 0.9;
-                
+
                 console.log(speed);
                 // 清除定时器
                 clearInterval(timer);
                 // 重新定义定时器
-                timer = setInterval(function(){
+                timer = setInterval(function () {
                     snake.move();
-                },speed);
+                }, speed);
             }
         }
 
         // 检测蛇是否出界
-        Snake.prototype.border = function(){
+        Snake.prototype.border = function () {
 
             //蛇头坐标是否超过地图范围
-            if(this.body[0][0] < 0 || this.body[0][0] > 39 || this.body[0][1] < 0 || this.body[0][1] > 29 ){
+            if (this.body[0][0] < 0 || this.body[0][0] > 39 || this.body[0][1] < 0 || this.body[0][1] > 29) {
                 // 出界处理
                 // 弹窗
                 alert("蛇撞墙了,游戏结束");
 
                 // 清除定时器
                 clearInterval(timer);
-            }  
+            }
         }
 
         // 检测是否吃到身体的方法
-        Snake.prototype.suicade = function(){
+        Snake.prototype.suicade = function () {
             // 循环
-            for(var i = this.body.length - 1; i >= 4; i--){
+            for (var i = this.body.length - 1; i >= 4; i--) {
                 // 食物的位置与蛇节的位置相同
-                if(this.body[i][0] == this.body[0][0] && this.body[i][1] == this.body[0][1]){
+                if (this.body[i][0] == this.body[0][0] && this.body[i][1] == this.body[0][1]) {
                     // 弹窗
                     alert("蛇吃到自己了,游戏结束");
                     // 清除定时器
@@ -269,10 +284,10 @@
             }
         }
 
-// ----------------------------------------------------------------------------------------
+        // ----------------------------------------------------------------------------------------
 
         // 封装计分板
-        function Scorce(){  
+        function Scorce() {
             // 计分板相关属性
             // 宽   
             this.width = map.width;
@@ -289,13 +304,13 @@
         }
 
         // 计分板显示方法
-        Scorce.prototype.show = function(){
+        Scorce.prototype.show = function () {
             // 判断分数为0时
-            if(this.scorces == 0){
+            if (this.scorces == 0) {
                 // 创建div
                 this._scorce = document.createElement("div");
                 // 宽
-                this._scorce.style.width = this.width/3 + "px";
+                this._scorce.style.width = this.width / 3 + "px";
                 // 高
                 this._scorce.style.height = this.height + "px";
                 // 下边框
@@ -307,48 +322,47 @@
                 // 字体行高
                 this._scorce.style.lineHeight = this.height + "px";
                 // 将计分板添加到body中
-                document. body.appendChild(this._scorce);
+                document.body.appendChild(this._scorce);
             }
-            
+
             // 初始化计分板
             this._scorce.innerHTML = "";
             // 给计分板添加内容
             this._scorce.innerHTML = "分数：" + this.scorces;
 
         }
-        
+
 
         // 封装用户操作面板
-        document.body.onkeydown = function(e) {
+        document.body.onkeydown = function (e) {
             // 有事件对象就用事件对象，没有就自己创建一个，兼容低版本浏览器
             var ev = e || window.event;
-            switch(ev.key)
-            {
+            switch (ev.key) {
                 case "w":
-                if (snake.direction != 'down') {  // 向上的时候不能向下
-                    snake.direction = "up";
-                }
-                break;
+                    if (snake.direction != 'down') {  // 向上的时候不能向下
+                        snake.direction = "up";
+                    }
+                    break;
                 case "s":
-                if (snake.direction != "up") {
-                    snake.direction = "down";
-                }
-                break;
+                    if (snake.direction != "up") {
+                        snake.direction = "down";
+                    }
+                    break;
                 case "a":
-                if (snake.direction != "right") {
-                    snake.direction = "left";
-                }
-                break;
+                    if (snake.direction != "right") {
+                        snake.direction = "left";
+                    }
+                    break;
                 case "d":
-                if (snake.direction != "left") {
-                    snake.direction = "right";
-                }
-                break;
+                    if (snake.direction != "left") {
+                        snake.direction = "right";
+                    }
+                    break;
             }
         };
 
         // 实例化地图对象
-        var map = new Map(800,600);
+        var map = new Map(800, 600);
         map.show();
 
         // 实例化食物对象
@@ -367,11 +381,12 @@
         // 定义初始速度
         var speed = 200;
         // 开启定时器
-        var timer = setInterval(function(){
+        var timer = setInterval(function () {
             // 让蛇不断移动
             snake.move();
-        },speed);
-        
+        }, speed);
+
     </script>
 </body>
+
 </html>
