@@ -23,6 +23,9 @@ p {
   -o-transition: all 0.5s;
   -moz-transition: all 0.5s;
   transition: all 0.5s;
+  -webkit-box-shadow: 5px 5px 10px #888888;
+     -moz-box-shadow: 5px 5px 10px #888888;
+          box-shadow: 5px 5px 10px #888888;
 }
 .content .box img:hover {
   -webkit-transform: translateY(-10px);
@@ -61,10 +64,19 @@ p {
   max-width: 100%;
   width: auto;
 }
+.content .js {
+  border-bottom: 2px solid gray;
+}
 .content .js .row {
   padding: 20px;
 }
 .content .js .row a img {
+  max-width: 100%;
+}
+.content .jq .row {
+  padding: 20px;
+}
+.content .jq .row a img {
   max-width: 100%;
 }
 /*# sourceMappingURL=./style.css.map */

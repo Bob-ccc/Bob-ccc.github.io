@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图无缝jq封装</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
+
+    <style>
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .warper {
+            margin: auto;
+            margin-top: 50px;
+            /* width: 300px; */
+            /* height: 200px; */
+            overflow: hidden;
+            position: relative;
+            transition: all .3s;
+            border-radius: 50px;
+        }
+
+        .warper .content {
+            /* width: 1500px; */
+            position: absolute;
+        }
+
+        .warper .content li {
+            /* width: 1500px; */
+            /* height: 800px; */
+            float: left;
+            position: relative;
+            overflow: hidden;
+        }
+        .warper .content li>span{
+            display: inline-block;
+            position: absolute;
+            width: 100px;
+            height: 60px;
+            top: -60px;
+            left: 50px;
+            font-size: 50px;
+            color: white;
+            transition: all .3s;
+        }
+        .warper .content li img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .warper .dots {
+            bottom: -5px;
+            left: 50%;
+            position: absolute;
+            transition: inherit;
+            /* margin-left: -75px; */
+        }
+
+        .warper .dots li {
+            background-color: white;
+            width: 30px;
+            height: 10px;
+            float: left;
+            margin-left: 10px;
+            /* border-radius: 10px; */
+            opacity: .3;
+            transition: inherit;
+        }
+        .warper .dots li:hover{
+            opacity: .8;
+        }
+        .warper .dots li.active {
+            opacity: .8;
+        }
+
+        .warper .control {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            margin-top: -35px;
+        }
+
+        .warper .control div {
+            cursor: pointer;
+            text-align: center;
+            background-color: rgba(0, 0, 0, .3);
+            font-size: 50px;
+            width: 50px;
+            height: 50px;
+            line-height: 40px;
+            padding: 10px 0;
+            position: absolute;
+            transition: all .3s;
+
+        }
+
+        .warper .control div i {
+            color: white;
+        }
+        .warper .control div:hover{
+            background-color: rgba(255, 255, 255, .3);
+        }
+        .warper .control div:hover i{
+            color:black
+        }
+        .warper .control .prev {
+            /* float: left; */
+            left: -35px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        .warper .control .next {
+            /* float: right; */
+            right: -35px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        .warper .control .next:hover{
+            border-right-color: transparent;
+        }
+        .warper:hover .control .prev {
+            left: 0px;
+            padding-right: 10px;
+        }
+
+        .warper:hover .control .next {
+            right: 0px;
+            padding-left: 10px;
+        }
+
+        .warper:hover .dots {
+            bottom: 20px;
+        }
+
+        .warper:hover .content li>span{
+            top:20px;
+        }
+    </style>
+    <script>
+        // 封装jq
+         $.fn.banner = function (width,height,time) {
+            // 初始化样式
+            // console.log($(".warper").width()*$(this).find(".content li").length,$(this).find(".content li").height())
+            var _this = this; 
+            var time = time || 2000;
+            $(this).find(".content li").css({
+                width:width||"1000px",
+                height:height||"500px",
+            })
+
+            $(this).find(".content").css({
+                "width": $(this).width() * $(this).find(".content li").length + "px"
+            })
+            $(this).css({
+                "width":  $(this).find(".content li").width() + "px",
+                "height":  $(this).find(".content li").height() + "px"
+            })
+
+            $(this).append('<ul class="dots"></ul>');
+
+            $(this).find(".content li").attr("index", function () {
+                return $(this).index()
+            }).each(function (index, element) {
+                $(this).append("<span>item"+(index+1)+"</span>")
+                // console.log($(this))
+                $(_this).find(".dots").append("<li></li>")
+            })
+            $(this).find(".dots").children().first().addClass("active")
+            // console.log($(".warper .dots").width())
+            $(this).find(".dots").css("margin-left", function () {
+                return -$(this).width() / 2 + "px"
+            })
+
+
+
+            function filterImg(n) {
+                return $(_this).find(".content li").filter(function (index) {
+                    return $(this).attr("index") == n
+                })
+            }
+            function next() {
+                $(_this).find(".content").stop().animate({ "left": -$(_this).find(".content li").width() + "px" }, function () {
+                    $(this).css("left", 0).find("li").first().appendTo($(_this).find(".content"))
+                })
+            }
+            function prev() {
+                $(_this).find(".content").css("left", -$(_this).find(".content li").width() + "px").stop().animate({ "left": 0 })
+            }
+
+            // 小圆点点击
+            $(this).find(".dots").find("li").click(function () {
+                $(this).addClass("active").siblings().removeClass("active")
+
+                // console.log($(this).find(".content li").first(), $(this).index())
+                // console.log(filterImg($(this).index()).attr("index"), $(this).index())
+                if ($(this).index() > $(_this).find(".content li").first().attr("index")) {
+                    $(_this).find(".content li").first().after(filterImg($(this).index()))
+                    next()
+                } else if ($(this).index() < $(_this).find(".content li").first().attr("index")) {
+                    $(_this).find(".content li").first().before(filterImg($(this).index()))
+                    prev()
+                }
+            })
+
+            function showActive(index) {
+                $(_this).find(".dots li").eq(index).addClass("active").siblings().removeClass("active")
+                // console.log($(".warper .dots li").eq(index))
+            }
+
+            // next点击
+            $(this).find(".control .next").click(function () {
+
+                // 先确定当前下标  
+                var currentIndex = $(_this).find(".content li").first().attr("index")
+                // 根据当前确定 下一张
+                var prepareIndex = ++currentIndex > $(_this).find(".content li").length - 1 ? 0 : currentIndex
+                showActive(prepareIndex)
+                $(_this).find(".content li").first().after(filterImg(prepareIndex))
+                next()
+            })
+
+            // prev点击
+            $(this).find(".control .prev").click(function () {
+
+                // 先确定当前下标  
+                var currentIndex = $(_this).find(".content li").first().attr("index")
+                // 根据当前确定 下一张
+                var prepareIndex = --currentIndex < 0 ? $(_this).find(".content li").length - 1 : currentIndex
+                showActive(prepareIndex)
+                $(_this).find(".content li").first().before(filterImg(prepareIndex))
+                prev()
+            })
+
+            var timer = setInterval(function () {
+                $(_this).find(".control .next").click()
+            }, time)
+
+            $(this).hover(function () {
+                clearInterval(timer)
+            }, function () {
+                timer = setInterval(function () {
+                    $(_this).find(".control .next").click()
+                }, time)
+            })
+            return this
+        }
+    </script>
+</head>
+
+<body>
+    <div class="warper banner1">
+        <ul class="content">
+            <li><img src="./img/001.jpg" alt=""></li>
+            <li><img src="./img/002.jpg" alt=""></li>
+            <li><img src="./img/003.jpg" alt=""></li>
+            <li><img src="./img/004.jpg" alt=""></li>
+            <li><img src="./img/005.jpg" alt=""></li>
+            <li><img src="./img/006.jpg" alt=""></li>
+        </ul>
+        <div class="control">
+            <div class="prev">
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </div>
+            <div class="next">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(".banner1").banner(1000,600,1500).fadeTo(2000);
+    </script>
+
+<!-- <div class="warper banner2">
+    <ul class="content">
+        <li><img src="./img/001.jpg" alt=""></li>
+        <li><img src="./img/002.jpg" alt=""></li>
+        <li><img src="./img/003.jpg" alt=""></li>
+        <li><img src="./img/004.jpg" alt=""></li>
+        <li><img src="./img/005.jpg" alt=""></li>
+        <li><img src="./img/006.jpg" alt=""></li>
+        <li><img src="./img/007.jpg" alt=""></li>
+        <li><img src="./img/008.jpg" alt=""></li>
+        <li><img src="./img/009.jpg" alt=""></li>
+        <li><img src="./img/010.png" alt=""></li>
+    </ul>
+    <div class="control">
+        <div class="prev">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </div>
+        <div class="next">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(".banner2").banner(1500,800,1000)
+</script>
+
+<div class="warper banner4">
+    <ul class="content">
+        <li><img src="./img/001.jpg" alt=""></li>
+        <li><img src="./img/002.jpg" alt=""></li>
+        <li><img src="./img/003.jpg" alt=""></li>
+    </ul>
+    <div class="control">
+        <div class="prev">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </div>
+        <div class="next">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(".banner4").banner(500,300)
+</script> -->
+</body>
+
+</html>

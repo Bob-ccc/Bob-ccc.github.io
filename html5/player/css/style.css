@@ -1,0 +1,297 @@
+body {
+  background-color: #111111;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+}
+body .player {
+  width: 600px;
+  height: 400px;
+}
+body .player audio {
+  width: 100%;
+}
+body .player .player_card {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  -webkit-border-radius: 12px;
+     -moz-border-radius: 12px;
+          border-radius: 12px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+     -moz-box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+          box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+  padding: 25px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+body .player .player_card .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/xuezhiqian.png);
+  -moz-background-size: cover;
+       background-size: cover;
+  background-position-y: center;
+  -webkit-transform: scale(2);
+     -moz-transform: scale(2);
+      -ms-transform: scale(2);
+       -o-transform: scale(2);
+          transform: scale(2);
+  -webkit-filter: blur(10px) brightness(0.7);
+          filter: blur(10px) brightness(0.7);
+  z-index: -1;
+}
+body .player .player_card .card_clice {
+  width: 150px;
+  height: 150px;
+  background-color: black;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+  position: relative;
+}
+body .player .player_card .card_clice > img {
+  padding: 30px;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+  -webkit-animation: myrotate 2s linear infinite;
+     -moz-animation: myrotate 2s linear infinite;
+       -o-animation: myrotate 2s linear infinite;
+          animation: myrotate 2s linear infinite;
+  -webkit-animation-play-state: paused;
+     -moz-animation-play-state: paused;
+       -o-animation-play-state: paused;
+          animation-play-state: paused;
+}
+body .player .player_card .card_clice .cd_tou {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 28px;
+}
+body .player .player_card .card_clice .cd_tou img {
+  -webkit-transform-origin: 20px 6px;
+     -moz-transform-origin: 20px 6px;
+      -ms-transform-origin: 20px 6px;
+       -o-transform-origin: 20px 6px;
+          transform-origin: 20px 6px;
+  -webkit-transform: rotate(-15deg);
+     -moz-transform: rotate(-15deg);
+      -ms-transform: rotate(-15deg);
+       -o-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+body .player .player_card .card_clice.playing > img {
+  -webkit-animation-play-state: running;
+     -moz-animation-play-state: running;
+       -o-animation-play-state: running;
+          animation-play-state: running;
+}
+body .player .player_card .card_clice.playing .cd_tou img {
+  -webkit-transform: rotate(0deg);
+     -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+       -o-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+body .player .player_card .card_control {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+     -moz-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-left: 40px;
+}
+body .player .player_card .card_control h3 {
+  font-size: 16px;
+  font-weight: bold;
+}
+body .player .player_card .card_control p {
+  font-size: 14px;
+  color: #ccc;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+body .player .player_card .card_control .control_btns {
+  margin-bottom: 15px;
+}
+body .player .player_card .card_control .control_btns span {
+  display: inline-block;
+  width: 10px;
+  height: 100%;
+  margin: 5px;
+  font-size: 16px;
+}
+body .player .player_card .card_control .control_btns span.btn_toggle i {
+  display: none;
+}
+body .player .player_card .card_control .control_btns span.btn_toggle i:nth-of-type(1) {
+  display: inline-block;
+}
+body .player .player_card .card_control .control_btns span.btn_toggle.active i {
+  display: none;
+}
+body .player .player_card .card_control .control_btns span.btn_toggle.active i:nth-of-type(2) {
+  display: inline-block;
+}
+body .player .player_card .card_control .control_btns span.btn_mode i {
+  display: none;
+}
+body .player .player_card .card_control .control_btns span.btn_mode i:nth-of-type(1) {
+  display: inline-block;
+}
+body .player .player_card .card_control .control_btns span.btn_mode.active i {
+  display: none;
+}
+body .player .player_card .card_control .control_btns span.btn_mode.active i:nth-of-type(2) {
+  display: inline-block;
+}
+body .player .player_card .card_control .range {
+  position: relative;
+  height: 6px;
+}
+body .player .player_card .card_control .range .range_play {
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  cursor: pointer;
+}
+body .player .player_card .card_control .range .range_play .range_play_slider {
+  width: 0;
+  height: 100%;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  background: #0cb6d4;
+}
+body .player .player_card .card_control .range .range_play .range_play_slider .dlider_hover {
+  width: 8px;
+  height: 100%;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  background-color: #fff;
+  float: right;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+body .player .player_card .card_control .range .range_play_input {
+  top: -7px;
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+}
+body .player .player_card .card_control .range:hover .range_play .range_play_slider .dlider_hover {
+  opacity: 1;
+}
+body .player .player_list {
+  width: 100%;
+  padding: 10px;
+  margin-top: 50px;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+body .player .player_list li {
+  padding-left: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #ccc;
+  position: relative;
+}
+body .player .player_list li:nth-of-type(2) {
+  margin: 10px 0;
+}
+body .player .player_list li span {
+  position: absolute;
+  left: 0;
+  display: none;
+}
+body .player .player_list li.active {
+  color: #fff;
+}
+body .player .player_list li.active span {
+  display: inline-block;
+}
+@-webkit-keyframes myrotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@-moz-keyframes myrotate {
+  from {
+    -moz-transform: rotate(0deg);
+         transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+         transform: rotate(360deg);
+  }
+}
+@-o-keyframes myrotate {
+  from {
+    -o-transform: rotate(0deg);
+       transform: rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(360deg);
+       transform: rotate(360deg);
+  }
+}
+@keyframes myrotate {
+  from {
+    -webkit-transform: rotate(0deg);
+       -moz-transform: rotate(0deg);
+         -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+       -moz-transform: rotate(360deg);
+         -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=./style.css.map */

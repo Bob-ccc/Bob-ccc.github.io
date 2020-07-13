@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>放大镜jq封装</title>
+    <script src="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .blowup {
+            width: 500px;
+            height: 500px;
+            position: relative;
+            margin-top: 100px;
+            margin-left: 100px;
+            float: left;
+            outline: 5px solid white;
+
+        }
+
+        .blowup img {
+            width: 100%;
+        }
+
+        .blowup .zoom {
+            cursor: crosshair;
+            background: no-repeat;
+            width: 200px;
+            height: 200px;
+            border: 5px solid white;
+            border-radius: 50%;
+            position: absolute;
+            display: none;
+            /* background-size: 500px 500px; */
+            box-sizing: border-box;
+        }
+
+        .one {
+            width: 250px;
+            height: 250px;
+        }
+        .two {
+            width: 250px;
+            height: 250px;
+        }
+
+        .three {
+            width: 250px;
+            height: 250px;
+        }
+
+        .four {
+            width: 250px;
+            height: 250px;
+        }
+
+        .five {
+            width: 250px;
+            height: 250px;
+        }
+
+        .six {
+            width: 250px;
+            height: 250px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="blowup one">
+            <img src="./images/pexels-photo-288100.jpeg" alt="">
+        </div>
+        <div class="blowup two">
+            <img src="./images/0001.png" alt="">
+        </div>
+
+        <div class="blowup three">
+            <img src="./images/0002.png" alt="">
+        </div>
+
+        <div class="blowup four">
+            <img src="./images/0003.png" alt="">
+        </div>
+        <div class="blowup five">
+            <img src="./images/0004.png" alt="">
+        </div>
+        <div class="blowup six">
+            <img src="./images/0005.png" alt="">
+        </div>
+
+    </div>
+    <script>
+
+        $.fn.blowup = function (level) {
+            if (level == undefined) level = 2;
+            // console.log(level)
+
+            $(this).append('<div class="zoom"></div>')
+            
+            $(this).find(".zoom").css({
+                backgroundImage: 'url(' + $(this).find("img").attr("src") + ')',
+                backgroundSize: $(this).width() * level + "px " + $(this).height() * level + "px"
+            })
+
+            $(this).on("mousemove", function (event) {
+
+                $(this).find(".zoom").show()
+
+                $(this).find(".zoom").css({
+                    width: $(this).width() / 2,
+                    height: $(this).height() / 2
+                })
+
+                var x = event.pageX - $(this).offset().left;
+                var y = event.pageY - $(this).offset().top;
+                var zoomX = $(this).find(".zoom").outerWidth()
+                var zoomY = $(this).find(".zoom").outerHeight()
+                // console.log(x, y, $(this).width(), $(this).height())
+
+                if (x >= $(this).width() || x <= 0 || y >= $(this).height() || y <= 0) {
+                    $(this).find(".zoom").hide()
+                    return
+                }
+
+                $(this).find(".zoom").css({
+                    left: x - zoomX / 2,
+                    top: y - zoomY / 2,
+                    backgroundPositionX: -(x * level - zoomX / 2 + 5),
+                    backgroundPositionY: -(y * level - zoomY / 2 + 5)
+                })
+            })
+            return this
+        }
+
+        $(".one").blowup(1).css("opacity",' .9')
+        $(".two").blowup(2)
+        $(".three").blowup(3)
+        $(".four").blowup(4)
+        $(".five").blowup(4)
+        $(".six").blowup(4)
+
+    </script>
+</body>
+
+</html>

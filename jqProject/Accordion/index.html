@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手风琴</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/minireset.css/0.0.2/minireset.min.css">
+    <script src="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
+
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content {
+            width: 600px;
+            position: relative;
+            background-color: red;
+            overflow: hidden;
+        }
+
+        .content li {
+            /* overflow: hidden; */
+            top: 0;
+            width: 200px;
+            position: absolute;
+        }
+
+        .content li img {
+            display: block;
+        }
+
+        .content li:first-child {
+            position: relative;
+        }
+
+        .content li:nth-child(2) {
+            left: 200px;
+        }
+
+        .content li:nth-child(3) {
+            left: 300px;
+        }
+
+        .content li:nth-child(4) {
+            left: 400px;
+        }
+
+        .content li:nth-child(5) {
+            left: 500px;
+        }
+
+        .content li .mask {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .5);
+        }
+
+        .content li:first-child .mask {
+            height: 50px;
+        }
+
+        h5 {
+            color: skyblue;
+        }
+
+        h6 {
+            color: white;
+        }
+
+        .content li .mask .info {
+            margin: 5px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .content li .mask .desc {
+            margin: 5px;
+            position: absolute;
+            bottom: 0;
+            left: 100%;
+        }
+
+        .content li:first-child .mask .info {
+            left: -100%;
+        }
+
+        .content li:first-child .mask .desc {
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="content">
+
+        <li><img src="./img/datouwang1.jpg" alt="">
+
+            <div class="mask">
+                
+                <div class="info">
+                    <h5>胜率</h5>
+                    <h6>NO.1</h6>
+                </div>
+
+                <div class="desc">
+                    <h6>墨子</h6>
+                    <h5>胜率NO.1</h5>
+                </div>
+
+            </div>
+
+        </li>
+
+        <li><img src="./img/datouwang2.jpg" alt="">
+
+            <div class="mask">
+
+                <div class="info">
+                    <h5>胜率</h5>
+                    <h6>NO.1</h6>
+                </div>
+
+                <div class="desc">
+                    <h6>墨子</h6>
+                    <h5>胜率NO.1</h5>
+                </div>
+
+
+
+            </div>
+            
+        </li>
+        <li><img src="./img/datouwang3.jpg" alt="">
+
+            <div class="mask">
+
+                <div class="info">
+                    <h5>胜率</h5>
+                    <h6>NO.1</h6>
+                </div>
+
+                <div class="desc">
+                    <h6>墨子</h6>
+                    <h5>胜率NO.1</h5>
+                </div>
+
+            </div>
+
+        </li>
+        
+        <li><img src="./img/datouwang4.jpg" alt="">
+
+            <div class="mask">
+
+                <div class="info">
+                    <h5>胜率</h5>
+                    <h6>NO.1</h6>
+                </div>
+
+                <div class="desc">
+                    <h6>墨子</h6>
+                    <h5>胜率NO.1</h5>
+                </div>
+
+            </div>
+
+        </li>
+        
+        <li><img src="./img/datouwang5.jpg" alt="">
+
+            <div class="mask">
+
+                <div class="info">
+                    <h5>胜率</h5>
+                    <h6>NO.1</h6>
+                </div>
+
+                <div class="desc">
+                    <h6>墨子</h6>
+                    <h5>胜率NO.1</h5>
+                </div>
+
+            </div>
+
+        </li>
+        
+    </ul>
+
+    <script>
+
+        $(".content li").hover(function () {
+
+            // console.log($(this).children(".mask"))
+
+            $(this).children(".mask").stop().animate({ height: "50px" }, 300)
+            .end().siblings().children(".mask").stop().animate({ height: "100%" }, 300);
+
+            $(this).children(".mask").children(".info").stop().animate({ left: "-100%" }, 300)
+            .siblings().stop().animate({ left: 0 }, 300)
+
+            $(this).siblings().children(".mask").children(".info").stop().animate({ left: "0" }, 300)
+            .siblings().stop().animate({ left: "100%" }, 300)
+
+            var count = $(this).index();
+            $(".content li").each(function (index, element) {
+
+                if (count >= index) {
+                    $(element).stop().animate({ left: 100 * index + "px" }, 300)
+                } else (
+                    $(element).stop().animate({ left: 100 * index + 100 + "px" }, 300)
+                )
+            })
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>放大镜</title>
+    <style>
+        .content {
+            margin: 100px;
+            position: relative;
+        }
+
+        .original {
+            width: 400px;
+            height: 400px;
+            border: 1px solid #cccccc;
+            position: relative;
+            float: left;
+        }
+
+        .original img {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+        }
+
+        .original .mask {
+            width: 200px;
+            height: 200px;
+            background-color: rgba(0, 255, 0, .3);
+            position: absolute;
+            display: none;
+        }
+
+        .zoom {
+            width: 600px;
+            height: 600px;
+            border: 1px solid #cccccc;
+            float: left;
+            margin-left: 10px;
+            display: none;
+            background-image: url("./images/0001.png");
+            background-repeat: no-repeat;
+            background-size: 225% auto;
+        }
+
+        .list {
+            list-style: none;
+            padding: 0;
+            position: absolute;
+            top: 400px;
+        }
+
+        .list li {
+            width: 90px;
+            height: 90px;
+            margin: 0 3px;
+            float: left;
+            border: 2px solid transparent;
+
+        }
+
+        .list li img {
+            width: 90px;
+            height: 90px;
+        }
+
+        .list li.active {
+            border: 2px solid red;
+        }
+        .btns{
+            position: absolute;
+            left: 0;
+            top: -30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="original">
+            <img src="./images/0001.png" alt="">
+            <div class="mask"></div>
+        </div>
+        <ul class="list">
+            <li class="active"><img src="./images/0001.png" alt=""></li>
+            <li><img src="./images/0002.png" alt=""></li>
+            <li><img src="./images/0003.png" alt=""></li>
+            <li><img src="./images/0004.png" alt=""></li>
+        </ul>
+        <div class="btns">
+            <button value="2">X2</button>
+            <button value="3">X3</button>
+            <button value="4">X4</button>
+            <button value="5">X5</button>
+            <button value="6">X6</button>
+        </div>
+        <div class="zoom"></div>
+    </div>
+    <script>
+        var content = document.getElementsByClassName("content")[0];
+        var original = document.getElementsByClassName("original")[0];
+        var boxImg = original.getElementsByTagName("img")[0];
+        var mask = original.getElementsByClassName("mask")[0];
+        var zoom = document.getElementsByClassName("zoom")[0];
+        var list = document.getElementsByClassName("list")[0];
+        var lis = list.getElementsByTagName("li");
+        var lisImg = list.getElementsByTagName("img");
+        var btns = document.getElementsByTagName("button");
+
+        // 设置倍数
+        var level = 2;
+        var originalW = 400;
+        var originalH = 400;
+
+        var zoomW = 600;
+        var zoomH = 600;
+        var maskW = originalW / level;
+        var maskH = originalH / level;
+        original.style.width = originalW + "px";
+        original.style.height = originalH + "px";
+        zoom.style.width = zoomW + "px";
+        zoom.style.height = zoomW + "px";
+        zoom.style.backgroundSize = level + "00% auto";
+
+        // 改变倍数
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].onclick = function () {
+                console.log(this.value);
+                level = Number(this.value);
+                console.log(level);
+
+                maskW = originalW / level;
+                maskH = originalH / level;
+
+                mask.style.width = maskW + "px";
+                mask.style.height = maskH + "px";
+
+                zoom.style.backgroundSize = level + "00%";
+            };
+        }
+        // 预览图鼠标移动事件
+        original.onmousemove = function (event) {
+            // 鼠标箭头在预览图的位置x,y
+            var x = event.pageX - content.offsetLeft - 1;
+            var y = event.pageY - content.offsetTop - 1;
+            // 判断，使遮罩层在预览图中
+            if (x <= maskW / 2) x = maskW / 2;
+            if (x >= originalW - maskW / 2) x = originalW - maskW / 2;
+            if (y <= maskH / 2) y = maskH / 2;
+            if (y >= originalH - maskH / 2) y = originalH - maskH / 2;
+            // 鼠标移动时遮罩层跟着移动，鼠标处在遮罩层中间
+            mask.style.left = x - maskW / 2 + "px";
+            mask.style.top = y - maskH / 2 + "px";
+            // zoom层放大遮罩层的内容
+            zoom.style.backgroundPositionX = -(x - maskW / 2) * (zoomW / maskW) + "px";
+            zoom.style.backgroundPositionY = -(y - maskH / 2) * (zoomH / maskH) + "px";
+        }
+        // 预览图鼠标经过事件
+        original.onmouseover = function () {
+            // 遮罩层显示
+            mask.style.display = "block";
+            // zoom层显示
+            zoom.style.display = "block";
+        }
+        // 预览图鼠标离开事件
+        original.onmouseout = function () {
+            // 遮罩层隐藏
+            mask.style.display = "none";
+            zoom.style.display = "none";
+        }
+
+        // 循环
+        for (var i = 0; i < lis.length; i++) {
+            // 给li自定义属性
+            lis[i].index = i;
+            // li鼠标经过事件
+            lis[i].onmouseover = function () {
+                // 定义变量获取自定义属性index的值
+                var index = this.index;
+                // 循环删除active
+                for (var j = 0; j < lis.length; j++) {
+                    lis[j].classList.remove("active")
+                }
+                // 给鼠标所在的li添加active
+                this.classList.add("active")
+                // 定义变量src获取图片路径
+                var src = lisImg[index].src;
+                // 改变预览图
+                boxImg.src = src;
+                // 改变zoom层的背景
+                zoom.style.backgroundImage = 'url(' + src + ')'
+            }
+        }
+    </script>
+</body>
+
+</html>
