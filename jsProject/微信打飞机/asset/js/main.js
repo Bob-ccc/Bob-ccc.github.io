@@ -1,3 +1,11 @@
+rankingData = [
+    {name:bob,score:100},
+    {name:ccc,score:99},
+    {name:ddd,score:88}
+]
+
+
+
 var stageScene = document.querySelector(".stage");
 var gameScence = stageScene.querySelector(".game");
 var startButton = stageScene.querySelector(".start button");
