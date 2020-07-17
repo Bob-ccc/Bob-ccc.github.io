@@ -11,10 +11,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background-color: #111;
         }
         canvas {
             /* border: 1px solid black; */
-            background-color: #eeeeee ;
+            background-color: #111 ;
         }
     </style>
 </head>
@@ -81,9 +82,9 @@
             [
                 [0, 1, 1, 1, 0],
                 [1, 0, 0, 0, 1],
-                [1, 0, 0, 0, 1],
-                [1, 0, 0, 0, 1],
-                [1, 0, 0, 0, 1],
+                [1, 0, 0, 1, 1],
+                [1, 0, 1, 0, 1],
+                [1, 1, 0, 0, 1],
                 [1, 0, 0, 0, 1],
                 [0, 1, 1, 1, 0],
             ],
@@ -102,17 +103,17 @@
                 [0, 1, 1, 1, 0],
                 [1, 0, 0, 0, 1],
                 [0, 0, 0, 0, 1],
-                [0, 1, 1, 1, 0],
-                [1, 0, 0, 0, 0],
+                [0, 0, 1, 1, 0],
+                [0, 1, 0, 0, 0],
                 [1, 0, 0, 0, 0],
                 [1, 1, 1, 1, 1],
             ],
             // 3
             [
-                [0, 1, 1, 1, 0],
-                [1, 0, 0, 0, 1],
-                [0, 0, 0, 0, 1],
-                [0, 1, 1, 1, 0],
+                [1, 1, 1, 1, 1],
+                [0, 0, 0, 1, 0],
+                [0, 0, 1, 0, 0],
+                [0, 0, 0, 1, 0],
                 [0, 0, 0, 0, 1],
                 [1, 0, 0, 0, 1],
                 [0, 1, 1, 1, 0],
@@ -195,9 +196,9 @@
 
                     if (col) {
                         // context.fillStyle = "#"+Math.random().toString(16).substr(-6,6);
-                        context.fillStyle = "#444444";
+                        context.fillStyle = "#ff00aa";
                     } else {
-                        context.fillStyle = "#dddddd";
+                        context.fillStyle = "#222222";
                     }
                     // context.rect(
                     //     (x + indexCol) * 10,
@@ -234,13 +235,13 @@
             //  Math.random().toString(16).substr(-6,6)
                                         addBoll((x + indexCol + n) * 10 + 5, (y + indexRow) * 10 + 5,-Math.random()*10,1-Math.random()/2,Math.random().toString(16).substr(-6,6))
                                     }else if(indexCol == 1){
-                                        addBoll((x + indexCol + n) * 10 + 5, (y + indexRow) * 10 + 5,-Math.random()*10,1+Math.random()/2,Math.random().toString(16).substr(-6,6))
-                                    }else if(indexCol == 0){
                                         addBoll((x + indexCol + n) * 10 + 5, (y + indexRow) * 10 + 5,-Math.random()*10,2+Math.random()/2,Math.random().toString(16).substr(-6,6))
+                                    }else if(indexCol == 0){
+                                        addBoll((x + indexCol + n) * 10 + 5, (y + indexRow) * 10 + 5,-Math.random()*10,3+Math.random()/2,Math.random().toString(16).substr(-6,6))
                                     }else if(indexCol == 3){
-                                        addBoll((x + indexCol + n) * 10 + 5, (y + indexRow) * 10 + 5,-Math.random()*10,-1-Math.random()/2,Math.random().toString(16).substr(-6,6))
-                                    }else if(indexCol == 4){
                                         addBoll((x + indexCol + n) * 10 + 5, (y + indexRow) * 10 + 5,-Math.random()*10,-2-Math.random()/2,Math.random().toString(16).substr(-6,6))
+                                    }else if(indexCol == 4){
+                                        addBoll((x + indexCol + n) * 10 + 5, (y + indexRow) * 10 + 5,-Math.random()*10,-3-Math.random()/2,Math.random().toString(16).substr(-6,6))
                                     }
                                 }
                             })
