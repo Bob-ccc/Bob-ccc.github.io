@@ -13,7 +13,8 @@
             align-items: center;
         }
         canvas {
-            border: 1px solid black;
+            /* border: 1px solid black; */
+            background-color: #eeeeee ;
         }
     </style>
 </head>
@@ -24,7 +25,7 @@
     <script>
         var canvas = document.querySelector("canvas")
         var context = canvas.getContext("2d")
-
+        
 
         function line(x) {
             context.beginPath();
@@ -45,16 +46,18 @@
             var _this = this
             this.x = params.x;
             this.y = params.y;
-            this.v = 0
+            this.v = params.v||-6
             this.xv = params.xv;
             this.g = params.g || 1;
+            this.color = params.color||"666"
         }
         Boll.prototype.dots = function () {
             context.beginPath();
             context.arc(this.x, this.y, 5, Math.PI / 180 * 0, Math.PI / 180 * 360);
-            this.color = Math.random().toString(16).substr(-6,6)
+            // this.color = params.color||"red"
+            // 随机颜色
+            //  Math.random().toString(16).substr(-6,6)
             context.fillStyle = '#'+this.color;
-
             context.fill();
             context.closePath();
         }
@@ -62,8 +65,8 @@
             this.x += this.xv
             this.v += this.g
             this.y += this.v
-            if (this.y > 490) {
-                this.y = 490;
+            if (this.y > 495) {
+                this.y = 495;
                 this.v = -this.v * 0.8
             }
         }
@@ -192,9 +195,9 @@
 
                     if (col) {
                         // context.fillStyle = "#"+Math.random().toString(16).substr(-6,6);
-                        context.fillStyle = "#333333";
+                        context.fillStyle = "#444444";
                     } else {
-                        context.fillStyle = "rgba(0,0,0,0.1)";
+                        context.fillStyle = "#dddddd";
                     }
                     // context.rect(
                     //     (x + indexCol) * 10,
@@ -204,8 +207,8 @@
                     // );
                     context.arc((x + indexCol) * 10 + 5, (y + indexRow) * 10 + 5, 5, Math.PI / 180 * 0, Math.PI / 180 * 360,);
                     context.fill();
-                    context.strokeStyle = "white";
-                    context.stroke();
+                    // context.strokeStyle = "transparent";
+                    // context.stroke();
                     context.closePath();
                 });
             });
@@ -228,15 +231,16 @@
                                 // console.log(indexCol)
                                 if (col) {
                                     if (indexCol == 2) {
-                                        addBoll((x + indexCol + n) * 10 + 5, (y + indexRow) * 10 + 5, -0.5)
+            //  Math.random().toString(16).substr(-6,6)
+                                        addBoll((x + indexCol + n) * 10 + 5, (y + indexRow) * 10 + 5,-Math.random()*10,1-Math.random()/2,Math.random().toString(16).substr(-6,6))
                                     }else if(indexCol == 1){
-                                        addBoll((x + indexCol + n) * 10 + 5, (y + indexRow) * 10 + 5, -1)
+                                        addBoll((x + indexCol + n) * 10 + 5, (y + indexRow) * 10 + 5,-Math.random()*10,1+Math.random()/2,Math.random().toString(16).substr(-6,6))
                                     }else if(indexCol == 0){
-                                        addBoll((x + indexCol + n) * 10 + 5, (y + indexRow) * 10 + 5, -2)
+                                        addBoll((x + indexCol + n) * 10 + 5, (y + indexRow) * 10 + 5,-Math.random()*10,2+Math.random()/2,Math.random().toString(16).substr(-6,6))
                                     }else if(indexCol == 3){
-                                        addBoll((x + indexCol + n) * 10 + 5, (y + indexRow) * 10 + 5, 1)
+                                        addBoll((x + indexCol + n) * 10 + 5, (y + indexRow) * 10 + 5,-Math.random()*10,-1-Math.random()/2,Math.random().toString(16).substr(-6,6))
                                     }else if(indexCol == 4){
-                                        addBoll((x + indexCol + n) * 10 + 5, (y + indexRow) * 10 + 5, 2)
+                                        addBoll((x + indexCol + n) * 10 + 5, (y + indexRow) * 10 + 5,-Math.random()*10,-2-Math.random()/2,Math.random().toString(16).substr(-6,6))
                                     }
                                 }
                             })
@@ -295,8 +299,8 @@
         // 存储小球
         var bollsArr = []
 
-        function addBoll(x, y, xv) {
-            bollsArr.push(new Boll({ x: x, y: y, xv: xv }))
+        function addBoll(x, y,v, xv,color) {
+            bollsArr.push(new Boll({ x: x, y: y,v:v, xv: xv ,color:color}))
         }
 
 
@@ -335,7 +339,7 @@
 
             // boll2.dots()
             // boll2.move()
-        }, 20);
+        }, 40);
 
 
     </script>
