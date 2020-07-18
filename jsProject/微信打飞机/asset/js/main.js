@@ -1,7 +1,7 @@
 rankingData = [
-    {name:bob,score:100},
-    {name:ccc,score:99},
-    {name:ddd,score:88}
+    {name:"bob",score:100},
+    {name:"ccc",score:99},
+    {name:"ddd",score:88}
 ]
 
 
