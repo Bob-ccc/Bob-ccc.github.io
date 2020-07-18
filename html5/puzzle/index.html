@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拼图</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="warp">
+        <div id="list">
+            <table>
+                <caption value="排行榜">排行榜</caption>
+                <thead>
+                    <tr>
+                        <th>排名</th>
+                        <th>昵称</th>
+                        <th>分数</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+        <ul class="content">
+        </ul>
+        <div class="select">
+            <div class="begin">
+                <button>开始</button>
+                <span>步数:</span>
+                <span>0</span>
+            </div>
+            <div class="size">
+                <select name="" id="">
+                    <option value="2">2x2</option>
+                    <option value="3">3x3</option>
+                    <option value="4">4x4</option>
+                    <option value="5">5x5</option>
+                    <option value="6">6x6</option>
+                </select>
+                <span>分数:</span>
+                <span>0</span>
+            </div>
+            <div class="info">
+                <p>点击开始，拼图顺序打乱，游戏开始</p>
+                <p>拖动小图片可交换位置，顺序正确则成功</p>
+                <p>难度有2x2,3x3,4x4,5x5,6x6五级,对应不同的分数</p>
+                <p>在开始前可选择不同的拼图，有6个可供选择</p>
+            </div>
+            <div class="tabs">
+                <div class="big"></div>
+                <ul class="smalls">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="mask">
+        <div class="maskbox">
+            <div class="img"></div>
+            <div class="result">
+
+                <span class="close">X</span>
+                <p>
+                    步数
+                </p>
+                <p class="step">
+
+                </p>
+                <p>
+                    分数
+                </p>
+                <p class="score">
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="userName">
+        <div class="nameBox">
+            <input type="text" name="" id="name" placeholder="请输入用户名">
+            <button type="submit" id="submit">确定</button>
+
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+body {
+    background-color: #111;
+    margin: 0;
+}
+
+.mask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .maskbox {
+        // position: relative;
+        width: 400px;
+        height: 300px;
+        background-color: white;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .img {
+            width: 260px; 
+            height: 260px;
+            background-size: 100% auto;
+            // margin: 20px;
+            border-radius: 20px;
+            margin-left: 20px;
+        }
+        .result {
+            flex: 1; // position: relative;
+            height: 260px;
+            margin: 20px;
+            .close {
+                cursor: pointer; // position: absolute;
+                display: inline-block;
+                margin-left: 20px; // top: 20px;
+                // right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+                line-height: 40px;
+                text-align: center;
+                border-radius: 10px;
+                background-color: rgba(0, 0, 0, .1);
+                &:hover {
+                    color: white;
+                    background-color: rgba(0, 0, 0, .6);
+                }
+            }
+            p {
+                text-align: center;
+            }
+        }
+    }
+}
+
+.warp {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; // background-color: yellow;
+    #list {
+        display: flex;
+        align-items: flex-start;
+        height: 400px;
+        table {
+            color: white;
+            height: 360px;
+            width: 200px;
+            caption {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+            thead {
+                font-size: 20px;
+            }
+            tbody {
+                text-align: center;
+            }
+        }
+    }
+    ul.content {
+        width: 480px;
+        height: 480px;
+        background-color: #fff;
+        border: 5px solid white;
+        border-radius: 5px; // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // flex-wrap: wrap;
+        background-image: url(../img/timg1.jpg);
+        background-size: 100% auto;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        position: relative;
+        margin-left: 40px;
+        li {
+            position: absolute;
+            box-sizing: border-box; // width: 100px;
+            // height: 100px;
+            background-image: url(../img/timg1.jpg); // background-size: 300%;
+            border-radius: 5px;
+            border: 2px solid white;
+            transition: all .1s;
+        }
+    }
+    .select {
+        width: 400px;
+        height: 480px;
+        padding-left: 50px; // background-color: yellow;
+        .begin {
+            button {
+                // display: block;
+                width: 100px;
+                height: 30px;
+                border: none;
+                border-radius: 5px;
+                &:focus {
+                    outline: none;
+                }
+                &:hover {
+                    background-color: yellow;
+                }
+            }
+            span {
+                color: white;
+                margin-left: 20px;
+            }
+        }
+        .size {
+            margin-top: 20px;
+            select {
+                // display: block;
+                width: 100px;
+                height: 30px;
+                border: none;
+                text-align: center;
+                padding-left: 30px;
+                border-radius: 5px;
+
+            }
+            span {
+                color: white;
+                margin-left: 20px;
+            }
+        }
+        .info{
+            p{
+                color: white;
+            }
+        }
+        .tabs{
+            width: 100%;
+            height: 240px;
+            // background-color: white;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            .big{
+                height: 230px;
+                width: 230px;
+                // background-color: yellow;
+                box-sizing: border-box;
+                margin: 5px;
+                border: 5px solid white;
+                background-size: 100% auto;
+                background-image: url(../img/timg1.jpg);
+            }
+            .smalls{
+                width: 160px;
+                height: 240px;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                display: flex;
+                flex-wrap: wrap;
+                li{
+                    margin: 5px;
+                    width: 70px;
+                    height: 70px;
+                    background-color: blue;
+                    box-sizing: border-box;
+                    border: 2px solid rgba(255, 255, 255, .5);
+                    background-size: 100% auto;
+                    &.active{
+                        border-color: white;
+                    }
+                    &:hover{
+                        border-color: white;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+.userName {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center; // display: none;
+    .nameBox {
+        padding: 20px 40px;
+        width: 400px;
+        height: 200px;
+        background-color: white;
+        border-radius: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        #name {
+            width: 100%;
+            display: block;
+            height: 50px;
+            border: 3px solid orange;
+            border-radius: 30px;
+            padding-left: 20px;
+            font-size: 20px;
+            &:focus {
+                outline: none;
+            }
+        }
+        button {
+            display: block;
+            width: 100%;
+            height: 60px;
+            border-radius: 30px;
+            border: none;
+            font-size: 20px;
+            font-weight: bolder;
+            &:focus {
+                outline: none;
+            }
+            &:hover {
+                background-color: #999999;
+                color: #eeeeee;
+            }
+        }
+    }
+}
