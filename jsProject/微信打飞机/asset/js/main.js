@@ -1,11 +1,3 @@
-rankingData = [
-    {name:"bob",score:100},
-    {name:"ccc",score:99},
-    {name:"ddd",score:88}
-]
-
-
-
 var stageScene = document.querySelector(".stage");
 var gameScence = stageScene.querySelector(".game");
 var startButton = stageScene.querySelector(".start button");
@@ -205,9 +197,11 @@ function updateFrame() {
                 enemy.death = true
                 score++
                 gameDeathState = true
+
+                showRanking()
             }
         })
-        scoreDom.innerHTML = score
+        scoreDom.querySelectorAll("span")[1].innerHTML = score;
     }, 30);
 };
 
@@ -280,15 +274,67 @@ ourPlane.updateOurPlanePos = function () {
 ourPlane.updateOurPlanePos();
 
 
-
+var nameVal;
 // 点击开始游戏
 startButton.onclick = function () {
-    // 切换场景
-    stageScene.classList.add("play");
-    // 游戏开始
-    gameFrameId = updateFrame();
+    nameVal = document.querySelector("input").value;
+    scoreDom.querySelectorAll("span")[0].innerHTML = nameVal+": ";
+    if (nameVal) {
+        if(nameVal.length>5){
+            alert("用户名长度不能超过5，请重新输入")
+            return;
+        }
+        var rankingData = JSON.parse(localStorage.getItem("rankingList"))
+        if (!rankingData) {
+            rankingData = [
+                { name: "bob", score: 100 },
+                { name: "ccc", score: 99 },
+                { name: "ddd", score: 88 }
+            ]
+        }
+        var result = rankingData.find(function (element, index) {
+            return nameVal == element.name
+        })
+        if (result) {
+            alert("已有该用户名，请重新输入")
+            return;
+        }
+        var rankingArr = { name: nameVal, score: score };
+        rankingData.push(rankingArr);
+        localStorage.setItem("rankingList", JSON.stringify(rankingData));
+        // 切换场景
+        stageScene.classList.add("play");
+        // 游戏开始
+        gameFrameId = updateFrame();
+    }
+    else {
+        alert("请输入用户名")
+    }
 };
-
+var rankingScore = stageScene.querySelector(".ranking tbody");
+function changeRanking() {
+    var rankingData = JSON.parse(localStorage.getItem("rankingList"))
+    rankingScore.innerHTML = " "
+    rankingData.splice(9,)
+    rankingData.forEach(function (element, index, arr) {
+        var node = document.createElement("tr")
+        node.innerHTML = "<td>" + element.name + "</td>" + "<td>" + element.score + "</td>" + "<td>" + (index + 1) + "</td>";
+        rankingScore.appendChild(node)
+    })
+}
+function showRanking() {
+    var rankingData = JSON.parse(localStorage.getItem("rankingList"))
+    rankingData.forEach(function (element, index, arr) {
+        if (element.name == nameVal) {
+            element.score = score
+        }
+    });
+    rankingData.sort(function (a, b) {
+        return b.score - a.score
+    })
+    localStorage.setItem("rankingList", JSON.stringify(rankingData));
+    changeRanking()
+}
 // 游戏场景绑定点击 切换暂停游戏
 gameScence.onclick = function () {
     // 判断游戏暂停状态
@@ -296,6 +342,7 @@ gameScence.onclick = function () {
         // 游戏播放
         gamePlay();
     } else {
+        showRanking()
         // 游戏暂停
         gamePause();
     }
@@ -330,7 +377,6 @@ function mouse() {
         ourPlane.y = event.clientY - stageScene.offsetTop;
         ourPlane.updateOurPlanePos()
     };
-
 }
 mouse();
 // 子弹发射声音
