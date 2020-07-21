@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>别踩白块儿面向对象</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        li{
+
+        li {
             list-style: none;
         }
-        .score{
+
+        body {
+            background-color: #cccccc;
+        }
+
+        .score {
             width: 171px;
             height: 17px;
             border: 1px solid #b5b5b5;
@@ -21,39 +28,53 @@
             margin-top: 44px;
             margin-left: 50px;
         }
-        .content{
+
+        .content {
             width: 400px;
             height: 400px;
             margin-left: 50px;
             margin-top: 50px;
-            border: 1px solid #1b1be3;
+            /* border: 1px solid #1b1be3; */
             position: relative;
             overflow: hidden;
+            
+            background-color: #eeeeee
         }
-        .content .games{
+
+        .content .games {
             width: 400px;
             position: absolute;
             top: -150px;
-            
         }
-        .content .games ul{
+
+        .content .games ul {
             width: 100%;
             height: 100px;
         }
-        .content .games ul li{
+
+        .content .games ul li {
             width: 98px;
             height: 98px;
-            border: 1px solid #8d8d8d;
+            /* border: 1px solid transparent; */
+            margin: 1px;
             float: left;
+            transition: all .3s;
+            background-color: white;
+            /* border-radius: 10px; */
+            box-shadow: 0 0 1px 1px gray;
         }
-        .content .games ul .black{
+
+        .content .games ul .black {
             background-color: black;
+
         }
-        .content .games ul .white{
+
+        .content .games ul .white {
             background-color: white;
         }
     </style>
 </head>
+
 <body>
     <input type="text" value="0" class="score">
     <button class="reset">重新开始</button>
@@ -85,123 +106,124 @@
             </ul>
         </div>
     </div>
-<script>
-    document.querySelector(".reset").onclick = function(){
-        location.reload()
-    }
-    // 定义一个变量that
-    var that = null;
-
-    // 定义游戏对象
-    function Game(){
-
-        that = this;
-
-        // 对象属性
-        // 1.分数值
-        this.fenshu = 0;
-        // 2.下落速度
-        this.speed = 1;
-        // 3.游戏是否结束
-        this.gameover = false;
-        // 4.分数的文本框DOM对象
-        this.score = document.querySelector(".score");
-        // 5.游戏区域的DOM对象
-        this.games = document.querySelector(".games");
-        // 6.保存定时器的返回值
-        this.timer = null;
-
-        // 调用init初始化方法
-        this.init();
-    }
-    // 对象方法
-    // 1.游戏区域下落的方法
-    Game.prototype.down = function(){
-
-        // 定时器
-        this.timer = setInterval(function(){
-
-            that.games.style.top = that.games.offsetTop + that.speed +"px";
-
-            // 到达底部
-            if( that.games.offsetTop >= 0){
-                if( that.games.lastElementChild.getAttribute("pass") == null){
-                    alert("游戏区域到达底部还有黑块未点击，游戏结束，分数："+that.fenshu+"分");
-                    that.gameover = true;
-                    clearInterval(that.timer);
-                    return;
-                }
-                
-                // 创建一行
-                that.createUl();
-                that.games.style.top = "-100px";
-
-                // 删除最后一行
-                if(that.games.children.length > 5){
-                    that.games.lastElementChild.remove();
-                }
-            }
-        },15);
-    }
-
-    // 2创建行的方法
-    Game.prototype.createUl = function(){
-
-        var ul = document.createElement("ul");
-
-        // 生成随机数
-        var num = Math.floor(Math.random()*4+1);
-
-        for(var i = 1; i <= 4 ; i++){
-            var li = document.createElement("li");
-            if( num == i){
-                li.className = "black";
-            }
-            ul.appendChild(li);
+    <script>
+        document.querySelector(".reset").onclick = function () {
+            location.reload()
         }
-        that.games.insertBefore(ul,that.games.firstChild);
-    }
+        // 定义一个变量that
+        var that = null;
 
-    // 3判断游戏是否结束
-    Game.prototype.isOver = function(){
-        this.games.onclick = function(e){
+        // 定义游戏对象
+        function Game() {
 
-            // 事件兼容处理
-            var e = e || window.event;
+            that = this;
 
-            // 判断游戏是否已经结束
-            if( that.gameover){
-                alert("游戏已结束");
-            }else{
+            // 对象属性
+            // 1.分数值
+            this.fenshu = 0;
+            // 2.下落速度
+            this.speed = 1;
+            // 3.游戏是否结束
+            this.gameover = false;
+            // 4.分数的文本框DOM对象
+            this.score = document.querySelector(".score");
+            // 5.游戏区域的DOM对象
+            this.games = document.querySelector(".games");
+            // 6.保存定时器的返回值
+            this.timer = null;
 
-                // 通过e获得被点击的div
-                if(e.target.className == "black"){
-                    e.target.removeAttribute("class");
-                    that.fenshu++;
-                    that.score.value = that.fenshu;
-                    if(that.fenshu%5 == 0){
-                        that.speed++;
-                    } 
-                    e.target.parentNode.setAttribute("pass",true);
+            // 调用init初始化方法
+            this.init();
+        }
+        // 对象方法
+        // 1.游戏区域下落的方法
+        Game.prototype.down = function () {
 
-                }else{
-                    alert("点击的不是黑块，游戏结束，分数："+that.fenshu+"分");
-                    clearInterval(that.timer);
-                    // 把gameover改为true
-                    that.gameover = true;
+            // 定时器
+            this.timer = setInterval(function () {
+
+                that.games.style.top = that.games.offsetTop + that.speed + "px";
+
+                // 到达底部
+                if (that.games.offsetTop >= 0) {
+                    if (that.games.lastElementChild.getAttribute("pass") == null) {
+                        alert("游戏区域到达底部还有黑块未点击，游戏结束，分数：" + that.fenshu + "分");
+                        that.gameover = true;
+                        clearInterval(that.timer);
+                        return;
+                    }
+
+                    // 创建一行
+                    that.createUl();
+                    that.games.style.top = "-100px";
+
+                    // 删除最后一行
+                    if (that.games.children.length > 5) {
+                        that.games.lastElementChild.remove();
+                    }
+                }
+            }, 15);
+        }
+
+        // 2创建行的方法
+        Game.prototype.createUl = function () {
+
+            var ul = document.createElement("ul");
+
+            // 生成随机数
+            var num = Math.floor(Math.random() * 4 + 1);
+
+            for (var i = 1; i <= 4; i++) {
+                var li = document.createElement("li");
+                if (num == i) {
+                    li.className = "black";
+                }
+                ul.appendChild(li);
+            }
+            that.games.insertBefore(ul, that.games.firstChild);
+        }
+
+        // 3判断游戏是否结束
+        Game.prototype.isOver = function () {
+            this.games.onclick = function (e) {
+
+                // 事件兼容处理
+                var e = e || window.event;
+
+                // 判断游戏是否已经结束
+                if (that.gameover) {
+                    alert("游戏已结束");
+                } else {
+
+                    // 通过e获得被点击的div
+                    if (e.target.className == "black") {
+                        e.target.removeAttribute("class");
+                        that.fenshu++;
+                        that.score.value = that.fenshu;
+                        if (that.fenshu % 1 == 0) {
+                            that.speed+=0.1;
+                        }
+                        e.target.parentNode.setAttribute("pass", true);
+
+                    } else {
+                        alert("点击的不是黑块，游戏结束，分数：" + that.fenshu + "分");
+                        clearInterval(that.timer);
+                        // 把gameover改为true
+                        that.gameover = true;
+                    }
                 }
             }
         }
-    }
 
-    // 4游戏初始化的方法
-    Game.prototype.init = function(){
-        this.down();
-        this.isOver();
-    }
+        // 4游戏初始化的方法
+        Game.prototype.init = function () {
+            this.down();
+            this.isOver();
+        }
 
-    // 实例化对象
-    new Game();
-</script>
+        // 实例化对象
+        new Game();
+    </script>
 </body>
+
 </html>

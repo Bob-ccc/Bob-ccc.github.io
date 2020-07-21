@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滑块验证</title>
+    <style>
+        .content {
+            width: 400px;
+            /* height: 450px; */
+            padding: 20px;
+            margin: 100px auto;
+            border: 5px solid #cccccc;
+        }
+
+        .content .img {
+            background-image: url(./thum.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            width: 400px;
+            height: 400px;
+            position: relative;
+        }
+
+        .content .img .block {
+            top: 100px;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+        }
+
+        .content .img .slidingBlock {
+            box-shadow: 0 0 0 2px white;
+            left: 0;
+            background-image: url(./thum.jpg);
+        }
+
+        .content .img .togetBlock {
+            right: 30px;
+        }
+
+        .content .range {
+            position: relative;
+            margin-top: 10px;
+            width: 400px;
+            height: 50px;
+            background-color: #eeeeee;
+            border: 1px solid #cccccc;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bolder;
+            color: gray;
+        }
+
+        .content .range .rangeBtn {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bolder;
+            font-size: 24px;
+            box-shadow: 0 0 5px 2px gray;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .content .range .rangeBtn:hover {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="img">
+            <div class="block togetBlock">
+
+            </div>
+            <div class="block slidingBlock">
+
+            </div>
+        </div>
+        <div class="range">
+            向右滑动
+            <div class="rangeBtn">
+                →
+            </div>
+        </div>
+    </div>
+    <script>
+        let Block = {
+            random: {
+                left: Math.floor(Math.random() * (200 - 50)) + 200,
+                top: Math.floor(Math.random() * (400 - 50))
+            },
+            rangeBtn: document.querySelector(".rangeBtn"),
+            togetBlock: document.querySelector(".togetBlock"),
+            slidingBlock: document.querySelector(".slidingBlock"),
+            x: 0,
+            left: 0,
+            check() {
+                console.log(Block.togetBlock.offsetLeft)
+                return Block.togetBlock.offsetLeft - 5 < Block.slidingBlock.offsetLeft && Block.togetBlock.offsetLeft + 5 > Block.slidingBlock.offsetLeft
+            },
+            init() {
+                console.log(this.random.left)
+                this.random.left = Math.floor(Math.random() * (200 - 50)) + 200;
+                this.random.top = Math.floor(Math.random() * (400 - 50));
+                this.togetBlock.style.left = this.random.left + "px";
+                this.togetBlock.style.top = this.random.top + "px";
+                this.slidingBlock.style.top = this.random.top + "px";
+                this.slidingBlock.style.backgroundPositionX = -this.random.left + "px";
+                this.slidingBlock.style.backgroundPositionY = -this.random.top + "px";
+                this.slidingBlock.style.backgroundSize = 400 / 50 * 100 + "% auto";
+                this.rangeBtn.onmousedown = event => {
+                    this.x = event.clientX
+                    // console.log(this.x,event.clientX)
+
+                }
+                console.log(this.togetBlock.offsetLeft)
+
+                document.onmousemove = function (e) {
+                    if (event.buttons) {
+                        // console.log(this,e)//this指向document
+                        Block.left = e.clientX - Block.x;
+                        if (Block.left <= 0) Block.left = 0;
+                        if (Block.left >= 350) Block.left = 350;
+                        // console.log(left)
+                        Block.slidingBlock.style.left = Block.left + "px"
+                        Block.rangeBtn.style.left = Block.left + "px"
+
+                    }
+                }
+                // this.rangeBtn.onmouseup = function (event) {
+                document.onmouseup = function (event) {
+                    // console.log(this, event)
+                    Block.rangeBtn.style.left = 0;
+                    // this.style.left = 0;
+                    console.log(Block.check())
+                    if (Block.check()) {
+                        Block.slidingBlock.style.left = 0;
+
+                        Block.init();
+                        alert("验证成功")
+                    } else {
+                        console.log("1" + Block.slidingBlock.style.left)
+
+                        alert("验证失败")
+                    }
+                }
+            }
+        }
+        Block.init();
+    </script>
+</body>
+
+</html>
