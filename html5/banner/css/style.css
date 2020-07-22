@@ -1,0 +1,81 @@
+body {
+  overflow: hidden;
+  background-color: #111111;
+}
+body .container .content {
+  padding: 50px;
+  width: 100%;
+  height: 500px;
+}
+body .container .content ul {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform-style: preserve-3d;
+     -moz-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective-origin: 50% 50%;
+     -moz-perspective-origin: 50% 50%;
+          perspective-origin: 50% 50%;
+  -webkit-perspective: 2000px;
+     -moz-perspective: 2000px;
+          perspective: 2000px;
+  height: 400px;
+}
+body .container .content ul li {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  background-color: white;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  opacity: 0.5;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
+  -webkit-box-shadow: 0 0 5px 2px white;
+     -moz-box-shadow: 0 0 5px 2px white;
+          box-shadow: 0 0 5px 2px white;
+  padding: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+body .container .content ul li div {
+  text-align: center;
+  height: 300px;
+}
+body .container .content ul li div img {
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+  -webkit-box-shadow: 0 0 2px 1px gray;
+     -moz-box-shadow: 0 0 2px 1px gray;
+          box-shadow: 0 0 2px 1px gray;
+  max-height: 260px;
+}
+body .container .content ul li h3 {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 24px;
+}
+/*# sourceMappingURL=./style.css.map */
