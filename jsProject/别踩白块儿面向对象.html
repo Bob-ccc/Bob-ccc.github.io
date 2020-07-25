@@ -17,93 +17,134 @@
 
         body {
             background-color: #cccccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .score {
-            width: 171px;
+            /* width: 171px;
             height: 17px;
             border: 1px solid #b5b5b5;
             background-color: #ebebe4;
             line-height: 17px;
             margin-top: 44px;
-            margin-left: 50px;
+            margin-left: 50px; */
         }
-
+        .wrap{
+            border: 5px solid gray;
+        }
+        .wrap>p{
+            background-color: white;
+            border-bottom:5px solid gray ;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bolder;
+            color: skyblue;
+        }
         .content {
             width: 400px;
-            height: 400px;
-            margin-left: 50px;
-            margin-top: 50px;
+            height: 520px;
+            /* margin-left: 50px; */
+            /* margin-top: 50px; */
             /* border: 1px solid #1b1be3; */
             position: relative;
             overflow: hidden;
-            
-            background-color: #eeeeee
+
+            background-color: #eeeeee;
+            /* transform-style: preserve-3d; */
+            /* perspective: 1000px; */
+
         }
 
         .content .games {
             width: 400px;
             position: absolute;
-            top: -150px;
+            top: -400px;
         }
 
         .content .games ul {
             width: 100%;
-            height: 100px;
+            /* height: 100px; */
         }
 
         .content .games ul li {
-            width: 98px;
-            height: 98px;
+            width: 100px;
+            height: 130px;
+            box-sizing: border-box;
             /* border: 1px solid transparent; */
-            margin: 1px;
+            /* margin: 1px; */
             float: left;
             transition: all .3s;
             background-color: white;
             /* border-radius: 10px; */
             box-shadow: 0 0 1px 1px gray;
         }
-
+        .content .games ul li:hover{
+            transform: scale(.9);
+        }
         .content .games ul .black {
             background-color: black;
-
         }
 
         .content .games ul .white {
             background-color: white;
         }
+        .reset{
+            position: fixed;
+            width: 180px;
+            height: 100px;
+            z-index: 999;
+            margin: 200px 110px;
+            border: 5px solid gray;
+            border-radius: 20px;
+            background-color: white;
+            display: none;
+            font-size: 28px;
+            font-weight: bolder;
+            color: skyblue;
+            cursor: pointer;
+        }
+        .reset:hover{
+            background-color: skyblue;
+            color: black;
+            box-shadow: 0 0 5px 2px gray;
+        }
     </style>
 </head>
 
 <body>
-    <input type="text" value="0" class="score">
-    <button class="reset">重新开始</button>
-    <div class="content">
-        <div class="games">
-            <ul>
-                <li class="black"></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-            <ul>
-                <li></li>
-                <li class="black"></li>
-                <li></li>
-                <li></li>
-            </ul>
-            <ul>
-                <li></li>
-                <li></li>
-                <li class="black"></li>
-                <li></li>
-            </ul>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li class="black"></li>
-            </ul>
+    <div class="wrap">
+        <p> 分数： <span class="score">0</span></p>
+        <!-- <input type="text" value="0" class="score"> -->
+        <button class="reset">重新开始</button>
+        <div class="content">
+            <div class="games">
+                <ul>
+                    <li class="black"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <ul>
+                    <li></li>
+                    <li class="black"></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li class="black"></li>
+                    <li></li>
+                </ul>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li class="black"></li>
+                </ul>
+            </div>
         </div>
     </div>
     <script>
@@ -133,7 +174,7 @@
             this.timer = null;
 
             // 调用init初始化方法
-            this.init();
+            // this.init();
         }
         // 对象方法
         // 1.游戏区域下落的方法
@@ -150,12 +191,15 @@
                         alert("游戏区域到达底部还有黑块未点击，游戏结束，分数：" + that.fenshu + "分");
                         that.gameover = true;
                         clearInterval(that.timer);
+                        document.querySelector(".reset").style.display = "block"
                         return;
                     }
 
                     // 创建一行
                     that.createUl();
-                    that.games.style.top = "-100px";
+                    var li = document.querySelector("ul li");
+
+                    that.games.style.top = "-" + window.getComputedStyle(li).height;
 
                     // 删除最后一行
                     if (that.games.children.length > 5) {
@@ -199,9 +243,9 @@
                     if (e.target.className == "black") {
                         e.target.removeAttribute("class");
                         that.fenshu++;
-                        that.score.value = that.fenshu;
+                        that.score.innerText = that.fenshu;
                         if (that.fenshu % 1 == 0) {
-                            that.speed+=0.1;
+                            that.speed += 0.1;
                         }
                         e.target.parentNode.setAttribute("pass", true);
 
@@ -210,6 +254,7 @@
                         clearInterval(that.timer);
                         // 把gameover改为true
                         that.gameover = true;
+                        document.querySelector(".reset").style.display = "block"
                     }
                 }
             }
@@ -222,7 +267,8 @@
         }
 
         // 实例化对象
-        new Game();
+        let game = new Game();
+        game.init();
     </script>
 </body>
 

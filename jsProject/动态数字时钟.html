@@ -37,12 +37,21 @@
             display: block;
             width: 20px;
             height: 20px;
-            margin-top: 90px;
+            margin-top: 60px;
             margin-left: 135px;
             border-radius: 50%;
             background-color: #c00;
         }
-
+        .content .num:nth-child(2)::before {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin-top: 50px;
+            margin-left: 135px;
+            border-radius: 50%;
+            background-color: #c00;
+        }
         .content .num:nth-child(4) {
             margin-right: 50px;
         }
@@ -52,7 +61,17 @@
             display: block;
             width: 20px;
             height: 20px;
-            margin-top: 90px;
+            margin-top: 60px;
+            margin-left: 135px;
+            border-radius: 50%;
+            background-color: #c00;
+        }
+        .content .num:nth-child(4)::before {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin-top: 50px;
             margin-left: 135px;
             border-radius: 50%;
             background-color: #c00;
@@ -75,13 +94,15 @@
         .content .num div:nth-child(1) {
             top: 10px;
             left: 20px;
-        }
+            transition: all 0s;        }
 
         .content .num div:nth-child(2) {
             top: 20px;
             width: 10px;
             height: 75px;
             right: 10px;
+            transition: all 0s .05s;
+
         }
 
         .content .num div:nth-child(3) {
@@ -89,11 +110,13 @@
             width: 10px;
             height: 75px;
             right: 10px;
+            transition: all 0s .15s;
         }
 
         .content .num div:nth-child(4) {
             bottom: 10px;
             left: 20px;
+            transition: all 0s .2s;
         }
 
         .content .num div:nth-child(5) {
@@ -101,6 +124,7 @@
             width: 10px;
             height: 75px;
             left: 10px;
+            transition: all 0s .15s;
         }
 
         .content .num div:nth-child(6) {
@@ -108,12 +132,15 @@
             width: 10px;
             height: 75px;
             left: 10px;
+            transition: all 0s .05s;            
         }
 
         .content .num div:nth-child(7) {
             top: 95px;
             left: 20px;
+            transition: all 0s .1s;
         }
+
     </style>
 </head>
 
