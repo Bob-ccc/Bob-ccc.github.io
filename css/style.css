@@ -1,5 +1,5 @@
 body {
-  background-color: #f0f0f0;
+  background-color: transparent;
 }
 h1 {
   font-size: 48px;
@@ -83,10 +83,8 @@ p {
   max-width: 100%;
   width: auto;
 }
-.content .js {
-  border-bottom: 2px solid gray;
-}
 .content .js .row {
+  border-bottom: 2px solid gray;
   padding: 20px;
 }
 .content .js .row a img {

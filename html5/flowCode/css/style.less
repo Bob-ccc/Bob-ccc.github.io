@@ -1,0 +1,71 @@
+body {
+    background-color: #111111;
+    .content {
+        p {
+            color: white;
+            margin: 0;
+            padding: 0;
+            &:nth-of-type(1) {
+                animation: run1 1s linear 0s infinite;
+            }
+            &:nth-of-type(2) {
+                animation: run2 1s linear 0s infinite;
+            }
+            &:nth-of-type(3) {
+                animation: run3 1s linear 0s infinite;
+            }
+            &:nth-of-type(4) {
+                animation: run4 1s linear 0s infinite;
+            }
+            &:nth-of-type(5) {
+                animation: run5 1s linear 0s infinite;
+            }
+        }
+    } 
+}
+
+
+@keyframes run5 {
+    80% {
+        color: white;
+    }
+    100% {
+        color: yellow;
+    }
+}
+
+@keyframes run4 {
+    60% {
+        color: white;
+    }
+    80% {
+        color: yellow;
+    }
+}
+
+@keyframes run3 {
+    40% {
+        color: white;
+    }
+    60% {
+        color: yellow;
+    }
+}
+
+@keyframes run2 {
+    20% {
+        color: white;
+    }
+    40% {
+        color: yellow;
+    }
+}
+
+@keyframes run1 {
+    0% {
+        color: white;
+    }
+    20% {
+        color: yellow;
+    }
+}

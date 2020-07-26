@@ -1,0 +1,199 @@
+body {
+  background-color: #111111;
+}
+body .content p {
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+body .content p:nth-of-type(1) {
+  -webkit-animation: run1 1s linear 0s infinite;
+     -moz-animation: run1 1s linear 0s infinite;
+       -o-animation: run1 1s linear 0s infinite;
+          animation: run1 1s linear 0s infinite;
+}
+body .content p:nth-of-type(2) {
+  -webkit-animation: run2 1s linear 0s infinite;
+     -moz-animation: run2 1s linear 0s infinite;
+       -o-animation: run2 1s linear 0s infinite;
+          animation: run2 1s linear 0s infinite;
+}
+body .content p:nth-of-type(3) {
+  -webkit-animation: run3 1s linear 0s infinite;
+     -moz-animation: run3 1s linear 0s infinite;
+       -o-animation: run3 1s linear 0s infinite;
+          animation: run3 1s linear 0s infinite;
+}
+body .content p:nth-of-type(4) {
+  -webkit-animation: run4 1s linear 0s infinite;
+     -moz-animation: run4 1s linear 0s infinite;
+       -o-animation: run4 1s linear 0s infinite;
+          animation: run4 1s linear 0s infinite;
+}
+body .content p:nth-of-type(5) {
+  -webkit-animation: run5 1s linear 0s infinite;
+     -moz-animation: run5 1s linear 0s infinite;
+       -o-animation: run5 1s linear 0s infinite;
+          animation: run5 1s linear 0s infinite;
+}
+@-webkit-keyframes run5 {
+  80% {
+    color: white;
+  }
+  100% {
+    color: yellow;
+  }
+}
+@-moz-keyframes run5 {
+  80% {
+    color: white;
+  }
+  100% {
+    color: yellow;
+  }
+}
+@-o-keyframes run5 {
+  80% {
+    color: white;
+  }
+  100% {
+    color: yellow;
+  }
+}
+@keyframes run5 {
+  80% {
+    color: white;
+  }
+  100% {
+    color: yellow;
+  }
+}
+@-webkit-keyframes run4 {
+  60% {
+    color: white;
+  }
+  80% {
+    color: yellow;
+  }
+}
+@-moz-keyframes run4 {
+  60% {
+    color: white;
+  }
+  80% {
+    color: yellow;
+  }
+}
+@-o-keyframes run4 {
+  60% {
+    color: white;
+  }
+  80% {
+    color: yellow;
+  }
+}
+@keyframes run4 {
+  60% {
+    color: white;
+  }
+  80% {
+    color: yellow;
+  }
+}
+@-webkit-keyframes run3 {
+  40% {
+    color: white;
+  }
+  60% {
+    color: yellow;
+  }
+}
+@-moz-keyframes run3 {
+  40% {
+    color: white;
+  }
+  60% {
+    color: yellow;
+  }
+}
+@-o-keyframes run3 {
+  40% {
+    color: white;
+  }
+  60% {
+    color: yellow;
+  }
+}
+@keyframes run3 {
+  40% {
+    color: white;
+  }
+  60% {
+    color: yellow;
+  }
+}
+@-webkit-keyframes run2 {
+  20% {
+    color: white;
+  }
+  40% {
+    color: yellow;
+  }
+}
+@-moz-keyframes run2 {
+  20% {
+    color: white;
+  }
+  40% {
+    color: yellow;
+  }
+}
+@-o-keyframes run2 {
+  20% {
+    color: white;
+  }
+  40% {
+    color: yellow;
+  }
+}
+@keyframes run2 {
+  20% {
+    color: white;
+  }
+  40% {
+    color: yellow;
+  }
+}
+@-webkit-keyframes run1 {
+  0% {
+    color: white;
+  }
+  20% {
+    color: yellow;
+  }
+}
+@-moz-keyframes run1 {
+  0% {
+    color: white;
+  }
+  20% {
+    color: yellow;
+  }
+}
+@-o-keyframes run1 {
+  0% {
+    color: white;
+  }
+  20% {
+    color: yellow;
+  }
+}
+@keyframes run1 {
+  0% {
+    color: white;
+  }
+  20% {
+    color: yellow;
+  }
+}
+/*# sourceMappingURL=./style.css.map */
