@@ -84,6 +84,13 @@
                         </a>
                         <p>你画我猜(canvas)</p>
                     </div>
+                    
+                    <div class="box col-sm-6 col-md-3">
+                        <a target="_blank" href="./html5/browseZoom/index.html">
+                            <img src="./img/browseZoom.png" alt="browseZoom">
+                        </a>
+                        <p>3D浏览空间</p>
+                    </div>
                     <div class="box col-sm-6 col-md-3">
                         <a target="_blank" href="./css3/chart/index.html">
                             <img src="./img/chart.png" alt="chart">
@@ -109,7 +116,7 @@
                         </a>
                         <p>背景视差</p>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -211,37 +218,38 @@
     </div>
     <div align="center" style=" position:fixed; z-index: -1;; left:0; top:0px; width:100%; height:100%;">
         <canvas id="q" width="1920" height="1200"></canvas>
-        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
-    <script> $(document).ready(function() {
-        //设备宽度
-        var s = window.screen;
-         var width = q.width = s.width;
-        var height = q.height;
-        var yPositions = Array(300).join(0).split('');
-         var ctx = q.getContext('2d');
-        var draw = function() {
-                 ctx.fillStyle = 'rgba(255,255,255,.05)';
-                 ctx.fillRect(0, 0, width, height);
-                 ctx.fillStyle = 'skyblue';/*代码颜色*/
-                 ctx.font = '10pt Georgia';
-                 yPositions.map(function(y, index) {
-                         text = String.fromCharCode(1e2 + Math.random() * 330);
-                         x = (index * 10) + 10;
-                         q.getContext('2d').fillText(text, x, y);
-                         if (y > Math.random() * 1e4) {
-                                yPositions[index] = 0;
-                             } else {
-                                yPositions[index] = y + 10;
-                             }
-                    });
-             };
-        RunMatrix();
-       function RunMatrix() {
-                Game_Interval = setInterval(draw,30);
-             }
-     });</script>
+    <script>
+        $(document).ready(function () {
+            //设备宽度
+            var s = window.screen;
+            var width = q.width = s.width;
+            var height = q.height;
+            var yPositions = Array(300).join(0).split('');
+            var ctx = q.getContext('2d');
+            var draw = function () {
+                ctx.fillStyle = 'rgba(255,255,255,.5)';
+                ctx.fillRect(0, 0, width, height);
+                ctx.fillStyle = 'skyblue';/*代码颜色*/
+                ctx.font = '10pt Georgia';
+                yPositions.map(function (y, index) {
+                    text = String.fromCharCode(1e2 + Math.random() * 330);
+                    x = (index * 10) + 10;
+                    q.getContext('2d').fillText(text, x, y);
+                    if (y > Math.random() * 1e4) {
+                        yPositions[index] = 0;
+                    } else {
+                        yPositions[index] = y + 10;
+                    }
+                });
+            };
+            RunMatrix();
+            function RunMatrix() {
+                Game_Interval = setInterval(draw, 30);
+            }
+        });</script>
 </body>
 
 </html>
