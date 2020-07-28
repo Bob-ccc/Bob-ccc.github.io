@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epidemic</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="http://fonts.googleapis.com/css?family=Srisakdi:400,700&amp;subset=latin-ext,thai,vietnamese"
+
+</head>
+
+<body>
+    <div class="epi_content">
+        <div class="epi_cards">
+            <ul class="epi_selet">
+                <li class="active">国内疫情</li>
+                <li>国外疫情</li>
+            </ul>
+            <p class="time_info">统计截至<span>time</span></p>
+            <div class="epi_in">
+                <ul class="epi_data epi_data_top">
+                    <li>
+                        <p>累计确诊</p>
+                        <p>
+                            <span class="confirmedCount"></span>
+                        </p>
+                        <p>较昨天<span class="confirmedIncr"></span></p>
+                    </li>
+                    <li>
+                        <p>累计治愈</p>
+                        <p>
+
+                            <span class="curedCount"></span>
+                        </p>
+                        <p>较昨天<span class="curedIncr"></span></p>
+                    </li>
+                    <li>
+                        <p>累计死亡</p>
+                        <p>
+
+                            <span class="deadCount"></span>
+                        </p>
+                        <p>较昨天<span class="deadIncr"></span></p>
+                    </li>
+                </ul>
+                <ul class="epi_data epi_data_bottom">
+                    <li>
+                        <p>现存确诊</p>
+                        <p>
+
+                            <span class="currentConfirmedCount"></span>
+                        </p>
+                        <p>较昨天<span class="currentConfirmedIncr"></span></p>
+                    </li>
+                    <li>
+                        <p>境外输入确诊</p>
+                        <p>
+
+                            <span class="suspectedCount"></span>
+                        </p>
+                        <p>较昨天<span class="suspectedIncr"></span></p>
+                    </li>
+                    <li>
+                        <p>现存重症</p>
+                        <p>
+
+                            <span class="seriousCount"></spaspan>
+                        </p>
+                        <p>较昨天<span class="seriousIncr"></span></p>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="epi_out">
+                <ul class="epi_data epi_data_top">
+                    <li>
+                        <p>累计确诊</p>
+                        <p>
+                            <span class="confirmedCount"></span>
+                        </p>
+                        <p>较昨天<span class="confirmedIncr"></span></p>
+                    </li>
+                    <li>
+                        <p>现有确诊</p>
+                        <p>
+
+                            <span class="currentConfirmedCount"></span>
+                        </p>
+                        <p>较昨天<span class="currentConfirmedIncr"></span></p>
+                    </li>
+                    <li>
+                        <p>累计治愈</p>
+                        <p>
+
+                            <span class="curedCount"></span>
+                        </p>
+                        <p>较昨天<span class="curedIncr"></span></p>
+                    </li>
+                    <li>
+                        <p>累计死亡</p>
+                        <p>
+
+                            <span class="deadCount"></span>
+                        </p>
+                        <p>较昨天<span class="deadIncr"></span></p>
+                    </li>
+                </ul>
+                <ul class="epi_data epi_data_bottom">
+                    <li>
+                        <p>美国确诊</p>
+                        <p>
+
+                            <span class="USA_currentConfirmedCount"></span>
+                        </p>
+                        <p>较昨天<span class="USA_currentConfirmedIncr"></span></p>
+                    </li>
+                    <li>
+                        <p>巴西确诊</p>
+                        <p>
+
+                            <span class="ABC_currentConfirmedCount"></span>
+                        </p>
+                        <p>较昨天<span class="ABC_currentConfirmedIncr"></span></p>
+                    </li>
+                    <li>
+                        <p>印度确诊</p>
+                        <p>
+
+                            <span class="India_currentConfirmedCount"></spaspan>
+                        </p>
+                        <p>较昨天<span class="India_currentConfirmedIncr"></span></p>
+                    </li>
+                    <li>
+                        <p>俄罗斯确诊</p>
+                        <p>
+
+                            <span class="Russia_currentConfirmedCount"></spaspan>
+                        </p>
+                        <p>较昨天<span class="Russia_currentConfirmedIncr"></span></p>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="epi_etails epi_in_etails">
+            <h4>国内疫情</h4>
+            <ul class="list_title">
+                <li>地区</li>
+                <li>现有确诊</li>
+                <li>累计确诊</li>
+                <li>死亡</li>
+                <li>治愈</li>
+            </ul>
+            <ul class="epi_list">
+                <!-- <li>
+                    <div class="list_head">
+                        <span>中国香港</span>
+                        <span>855</span>
+                        <span>2249</span>
+                        <span>15</span>
+                        <span>1379</span>
+                    </div>
+                    <ol class="list_city">
+                        <li>
+                            <span>香港</span>
+                            <span>855</span>
+                            <span>2249</span>
+                            <span>15</span>
+                            <span>1379</span>
+                        </li>
+                    </ol>
+                </li> -->
+            </ul>
+            <p class="list_more"><span>查看更多地区</span></p>
+        </div>
+
+        <div class="epi_etails epi_out_etails">
+            <h4>全球疫情</h4>
+            <ul class="list_title">
+                <li>地区</li>
+                <li>现有确诊</li>
+                <li>累计确诊</li>
+                <li>死亡</li>
+                <li>治愈</li>
+            </ul>
+            <ul class="epi_list">
+            </ul>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
