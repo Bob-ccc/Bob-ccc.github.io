@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0b9fd5"],{"34fd":function(n,e,t){"use strict";t.r(e);var c=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div",[n._v(" 书架 ")])},u=[],r={},s=r,a=t("2877"),d=Object(a["a"])(s,c,u,!1,null,"7497b727",null);e["default"]=d.exports}}]);
-//# sourceMappingURL=chunk-2d0b9fd5.3eecacc1.js.map

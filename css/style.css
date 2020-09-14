@@ -51,6 +51,17 @@ p {
 .content .bootstrap .row .box a img {
   max-width: 100%;
 }
+.content .vue .row {
+  border-bottom: 2px solid gray;
+  padding: 20px;
+}
+.content .vue .row .box {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.content .vue .row .box a img {
+  max-width: 100%;
+}
 .content .css3 .row {
   border-bottom: 2px solid gray;
   padding: 20px;
