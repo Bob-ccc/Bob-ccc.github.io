@@ -319,3 +319,9 @@ beforeRouteEnter 守卫 不能 访问 this
 10. 调用全局的 afterEach 钩子。
 11. 触发 DOM 更新。
 12. 调用 beforeRouteEnter 守卫中传给 next 的回调函数，创建好的组件实例会作为回调函数的参数传入。
+
+##### 多窗口数据传递
+vueX 只能在当前窗口有效，跨窗口读取不到数据，解决办法：
+ //利用storage事件实时监视wev Storage中的数据
+window.addEventListener('storage',function (e) {
+})
