@@ -325,3 +325,13 @@ vueX 只能在当前窗口有效，跨窗口读取不到数据，解决办法：
  //利用storage事件实时监视wev Storage中的数据
 window.addEventListener('storage',function (e) {
 })
+
+##### require找不到文件路径
+require(*)中,*为变量时(路径为"@/...")是获取不到文件的，应改为字符串拼接
+ if (layerIcon.indexOf('@' !== -1)) {
+        var index = layerIcon.lastIndexOf('/')
+        layerIcon = layerIcon.substring(index + 1, layerIcon.length)
+        return require('@/assets/layer/' + layerIcon)
+      } else {
+        return layerIcon
+      }
