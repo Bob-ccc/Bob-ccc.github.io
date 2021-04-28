@@ -328,7 +328,7 @@ window.addEventListener('storage',function (e) {
 
 ##### require找不到文件路径
 require(*)中,*为变量时(路径为"@/...")是获取不到文件的，应改为字符串拼接
-
+```
  if (layerIcon.indexOf('@' !== -1)) {
     var index = layerIcon.lastIndexOf('/')
     layerIcon = layerIcon.substring(index + 1, layerIcon.length)
@@ -336,3 +336,4 @@ require(*)中,*为变量时(路径为"@/...")是获取不到文件的，应改�
 } else {
     return layerIcon
 }
+```
